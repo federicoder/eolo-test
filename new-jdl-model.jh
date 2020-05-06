@@ -1,0 +1,92 @@
+
+entity Professionista{
+	idProfessionista Int required
+    nome String
+    cognome String
+    tipologia String
+    codiceFiscale String required
+    pIva String 
+    studioAssociato String
+    idLicenza Int 
+}
+
+entity Licenza {
+	idLicenza Int required
+	tipologia String
+	descrizione String
+    dataScadenza DateTime
+    
+}
+
+entity Pratica {
+	idPratica Int required
+    idLic Int required
+    tdp Int required
+    idCollab Int 
+    idClient Int required
+}
+
+entity Collaboratore{
+	idCollaboratore Int required
+    nome String
+    cognome String
+    tipologia String
+    idPratic Int required
+    idInvito Int
+}
+
+entity Cliente {
+	idCliente Int required
+    nome String
+    cognome String
+    idPraticaConnessa Int required
+}
+entity Invito {
+	utenteIscritto Boolean 
+    idUtente Int
+    idPratica Int
+    idInvito Int required
+}
+
+entity StorageCloud{
+	idUtente Int required
+    idLicenza Int required
+    pianoBase String
+    dataCessione DateTime 
+}
+
+enum AmpliamentoStorage{
+	FIRSTKIT, SECONDKIT, THIRDKIT
+}
+
+relationship OneToOne {
+	Licenza{idLicenza} to Professionista,
+	Invito{idUtente} to Collaboratore{idCollaboratore},
+    Invito{idUtente} to Cliente{idUtente},
+    Licenza{idLicenza} to StorageCloud,
+    Professionista{idProfessionista} to StorageCloud,
+}
+relationship OneToMany{
+	Licenza{idLicenza} to Pratica{idLic},
+    Pratica{idPratica} to Invito{idPratica},
+	Professionista{idProfessionista} to Invito{idUtente}
+    Invito{idInvito} to Collaboratore {idInvito}
+}
+relationship ManyToMany{
+    Collaboratore{idCollaboratore} to Invito{idUtente}
+    Cliente{idCliente} to Invito{idPratica}
+
+}
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+paginate Collaboratore, Professionista, Cliente with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Cliente, Collaboratore
+
+// Set an angular suffix
+ angularSuffix * with frontend
