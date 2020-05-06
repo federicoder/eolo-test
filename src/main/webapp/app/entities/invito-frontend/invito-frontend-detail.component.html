@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invito">
+            <h2><span jhiTranslate="eoloTestApp.invito.detail.title">Invito</span> {{ invito.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eoloTestApp.invito.utenteIscritto">Utente Iscritto</span></dt>
+                <dd>
+                    <span>{{ invito.utenteIscritto }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.invito.idUtente">Id Utente</span></dt>
+                <dd>
+                    <span>{{ invito.idUtente }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.invito.idPratica">Id Pratica</span></dt>
+                <dd>
+                    <span>{{ invito.idPratica }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.invito.idInvito">Id Invito</span></dt>
+                <dd>
+                    <span>{{ invito.idInvito }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.invito.idUtente">Id Utente</span></dt>
+                <dd>
+                    <div *ngIf="invito.idUtenteId">
+                        <a [routerLink]="['/collaboratore-frontend', invito.idUtenteId, 'view']">{{ invito.idUtenteId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.invito.idUtente">Id Utente</span></dt>
+                <dd>
+                    <div *ngIf="invito.idUtenteId">
+                        <a [routerLink]="['/cliente-frontend', invito.idUtenteId, 'view']">{{ invito.idUtenteId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.invito.idPratica">Id Pratica</span></dt>
+                <dd>
+                    <div *ngIf="invito.idPraticaId">
+                        <a [routerLink]="['/pratica-frontend', invito.idPraticaId, 'view']">{{ invito.idPraticaId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.invito.idUtente">Id Utente</span></dt>
+                <dd>
+                    <div *ngIf="invito.idUtenteId">
+                        <a [routerLink]="['/professionista-frontend', invito.idUtenteId, 'view']">{{ invito.idUtenteId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invito-frontend', invito.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

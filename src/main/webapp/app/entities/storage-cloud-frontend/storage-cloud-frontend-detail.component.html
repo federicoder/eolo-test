@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="storageCloud">
+            <h2><span jhiTranslate="eoloTestApp.storageCloud.detail.title">Storage Cloud</span> {{ storageCloud.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eoloTestApp.storageCloud.idUtente">Id Utente</span></dt>
+                <dd>
+                    <span>{{ storageCloud.idUtente }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.storageCloud.idLicenza">Id Licenza</span></dt>
+                <dd>
+                    <span>{{ storageCloud.idLicenza }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.storageCloud.pianoBase">Piano Base</span></dt>
+                <dd>
+                    <span>{{ storageCloud.pianoBase }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.storageCloud.dataCessione">Data Cessione</span></dt>
+                <dd>
+                    <span>{{ storageCloud.dataCessione }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/storage-cloud-frontend', storageCloud.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

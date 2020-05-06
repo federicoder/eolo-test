@@ -1,0 +1,64 @@
+{
+    "name": "Pratica",
+    "fields": [
+        {
+            "fieldName": "idPratica",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idLic",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tdp",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idCollab",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idClient",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "invito",
+            "otherEntityRelationshipName": "idPratica",
+            "relationshipName": "idPratica"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "licenza",
+            "otherEntityRelationshipName": "idLicenza",
+            "relationshipName": "idLic",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200506144800",
+    "entityTableName": "pratica",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "frontend"
+}

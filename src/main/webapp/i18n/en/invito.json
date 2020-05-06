@@ -1,0 +1,33 @@
+{
+  "eoloTestApp": {
+    "invito": {
+      "home": {
+        "title": "Invitos",
+        "createLabel": "Create a new Invito",
+        "createOrEditLabel": "Create or edit a Invito",
+        "search": "Search for Invito",
+        "notFound": "No Invitos found"
+      },
+      "created": "A new Invito is created with identifier {{ param }}",
+      "updated": "A Invito is updated with identifier {{ param }}",
+      "deleted": "A Invito is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Invito {{ id }}?"
+      },
+      "detail": {
+        "title": "Invito"
+      },
+      "utenteIscritto": "Utente Iscritto",
+      "idUtente": "Id Utente",
+      "idPratica": "Id Pratica",
+      "idInvito": "Id Invito",
+      "idUtente": "Id Utente",
+      "idUtente": "Id Utente",
+      "idInvito": "Id Invito",
+      "idPratica": "Id Pratica",
+      "idUtente": "Id Utente",
+      "idUtente": "Id Utente",
+      "idPratica": "Id Pratica"
+    }
+  }
+}

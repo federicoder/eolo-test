@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-collaboratore-frontend-heading" jhiTranslate="eoloTestApp.collaboratore.home.createOrEditLabel">Create or edit a Collaboratore</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.idCollaboratore" for="field_idCollaboratore">Id Collaboratore</label>
+                    <input type="number" class="form-control" name="idCollaboratore" id="field_idCollaboratore"
+                           formControlName="idCollaboratore"/>
+                    <div *ngIf="editForm.get('idCollaboratore')!.invalid && (editForm.get('idCollaboratore')!.dirty || editForm.get('idCollaboratore')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idCollaboratore')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idCollaboratore')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.cognome" for="field_cognome">Cognome</label>
+                    <input type="text" class="form-control" name="cognome" id="field_cognome"
+                           formControlName="cognome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.tipologia" for="field_tipologia">Tipologia</label>
+                    <input type="text" class="form-control" name="tipologia" id="field_tipologia"
+                           formControlName="tipologia"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.idPratic" for="field_idPratic">Id Pratic</label>
+                    <input type="number" class="form-control" name="idPratic" id="field_idPratic"
+                           formControlName="idPratic"/>
+                    <div *ngIf="editForm.get('idPratic')!.invalid && (editForm.get('idPratic')!.dirty || editForm.get('idPratic')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idPratic')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idPratic')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.idInvito" for="field_idInvito">Id Invito</label>
+                    <input type="number" class="form-control" name="idInvito" id="field_idInvito"
+                           formControlName="idInvito"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="eoloTestApp.collaboratore.idCollaboratore" for="field_idCollaboratores">Id Collaboratore</label>
+                    <select class="form-control" id="field_idCollaboratores" multiple name="idCollaboratores" formControlName="idCollaboratores">
+                        <option [ngValue]="getSelected(editForm.get('idCollaboratores')!.value, invitoOption)" *ngFor="let invitoOption of invitos; trackBy: trackById">{{ invitoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.idInvito" for="field_idInvito">Id Invito</label>
+                    <select class="form-control" id="field_idInvito" name="idInvito" formControlName="idInvitoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="invitoOption.id" *ngFor="let invitoOption of invitos; trackBy: trackById">{{ invitoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

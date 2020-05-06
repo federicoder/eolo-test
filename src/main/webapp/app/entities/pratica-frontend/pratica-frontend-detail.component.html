@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pratica">
+            <h2><span jhiTranslate="eoloTestApp.pratica.detail.title">Pratica</span> {{ pratica.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eoloTestApp.pratica.idPratica">Id Pratica</span></dt>
+                <dd>
+                    <span>{{ pratica.idPratica }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.pratica.idLic">Id Lic</span></dt>
+                <dd>
+                    <span>{{ pratica.idLic }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.pratica.tdp">Tdp</span></dt>
+                <dd>
+                    <span>{{ pratica.tdp }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.pratica.idCollab">Id Collab</span></dt>
+                <dd>
+                    <span>{{ pratica.idCollab }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.pratica.idClient">Id Client</span></dt>
+                <dd>
+                    <span>{{ pratica.idClient }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.pratica.idLic">Id Lic</span></dt>
+                <dd>
+                    <div *ngIf="pratica.idLicId">
+                        <a [routerLink]="['/licenza-frontend', pratica.idLicId, 'view']">{{ pratica.idLicId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pratica-frontend', pratica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity Invito.
+    -->
+    <changeSet id="20200506145100-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="id_utente_id"
+                                 baseTableName="invito"
+                                 constraintName="fk_invito_id_utente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="collaboratore"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_utente_id"
+                                 baseTableName="invito"
+                                 constraintName="fk_invito_id_utente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cliente"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_pratica_id"
+                                 baseTableName="invito"
+                                 constraintName="fk_invito_id_pratica_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pratica"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_utente_id"
+                                 baseTableName="invito"
+                                 constraintName="fk_invito_id_utente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="professionista"/>
+
+    </changeSet>
+</databaseChangeLog>

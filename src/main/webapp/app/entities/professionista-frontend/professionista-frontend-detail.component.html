@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="professionista">
+            <h2><span jhiTranslate="eoloTestApp.professionista.detail.title">Professionista</span> {{ professionista.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eoloTestApp.professionista.idProfessionista">Id Professionista</span></dt>
+                <dd>
+                    <span>{{ professionista.idProfessionista }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.professionista.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ professionista.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.professionista.cognome">Cognome</span></dt>
+                <dd>
+                    <span>{{ professionista.cognome }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.professionista.tipologia">Tipologia</span></dt>
+                <dd>
+                    <span>{{ professionista.tipologia }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.professionista.codiceFiscale">Codice Fiscale</span></dt>
+                <dd>
+                    <span>{{ professionista.codiceFiscale }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.professionista.pIva">P Iva</span></dt>
+                <dd>
+                    <span>{{ professionista.pIva }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.professionista.studioAssociato">Studio Associato</span></dt>
+                <dd>
+                    <span>{{ professionista.studioAssociato }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.professionista.idLicenza">Id Licenza</span></dt>
+                <dd>
+                    <span>{{ professionista.idLicenza }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.professionista.idProfessionista">Id Professionista</span></dt>
+                <dd>
+                    <div *ngIf="professionista.idProfessionistaId">
+                        <a [routerLink]="['/storage-cloud-frontend', professionista.idProfessionistaId, 'view']">{{ professionista.idProfessionistaId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/professionista-frontend', professionista.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

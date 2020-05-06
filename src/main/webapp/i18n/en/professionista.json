@@ -1,0 +1,32 @@
+{
+  "eoloTestApp": {
+    "professionista": {
+      "home": {
+        "title": "Professionistas",
+        "createLabel": "Create a new Professionista",
+        "createOrEditLabel": "Create or edit a Professionista",
+        "search": "Search for Professionista",
+        "notFound": "No Professionistas found"
+      },
+      "created": "A new Professionista is created with identifier {{ param }}",
+      "updated": "A Professionista is updated with identifier {{ param }}",
+      "deleted": "A Professionista is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Professionista {{ id }}?"
+      },
+      "detail": {
+        "title": "Professionista"
+      },
+      "idProfessionista": "Id Professionista",
+      "nome": "Nome",
+      "cognome": "Cognome",
+      "tipologia": "Tipologia",
+      "codiceFiscale": "Codice Fiscale",
+      "pIva": "P Iva",
+      "studioAssociato": "Studio Associato",
+      "idLicenza": "Id Licenza",
+      "idProfessionista": "Id Professionista",
+      "idProfessionista": "Id Professionista"
+    }
+  }
+}

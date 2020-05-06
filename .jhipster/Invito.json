@@ -1,0 +1,90 @@
+{
+    "name": "Invito",
+    "fields": [
+        {
+            "fieldName": "utenteIscritto",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "idUtente",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idPratica",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idInvito",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "collaboratore",
+            "otherEntityRelationshipName": "idCollaboratore",
+            "relationshipName": "idUtente",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "idUtente",
+            "relationshipName": "idUtente",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "collaboratore",
+            "otherEntityRelationshipName": "idInvito",
+            "relationshipName": "idInvito"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "pratica",
+            "otherEntityRelationshipName": "idPratica",
+            "relationshipName": "idPratica",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "professionista",
+            "otherEntityRelationshipName": "idProfessionista",
+            "relationshipName": "idUtente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "collaboratore",
+            "otherEntityRelationshipName": "idCollaboratore",
+            "relationshipName": "idUtente",
+            "otherEntityField": "id",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "idCliente",
+            "relationshipName": "idPratica",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200506145100",
+    "entityTableName": "invito",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "frontend"
+}
