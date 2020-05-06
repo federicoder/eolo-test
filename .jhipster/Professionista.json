@@ -1,0 +1,71 @@
+{
+    "name": "Professionista",
+    "fields": [
+        {
+            "fieldName": "idProfessionista",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cognome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipologia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codiceFiscale",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "pIva",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "studioAssociato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idLicenza",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "storageCloud",
+            "otherEntityRelationshipName": "professionista",
+            "relationshipName": "idProfessionista",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "invito",
+            "otherEntityRelationshipName": "idUtente",
+            "relationshipName": "idProfessionista"
+        }
+    ],
+    "changelogDate": "20200506144600",
+    "entityTableName": "professionista",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "frontend"
+}

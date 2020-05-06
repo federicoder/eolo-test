@@ -1,0 +1,71 @@
+{
+    "name": "Collaboratore",
+    "fields": [
+        {
+            "fieldName": "idCollaboratore",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cognome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipologia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idPratic",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idInvito",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "invito",
+            "otherEntityRelationshipName": "idUtente",
+            "relationshipName": "idCollaboratore",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "invito",
+            "otherEntityRelationshipName": "idUtente",
+            "relationshipName": "idCollaboratore",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "invito",
+            "otherEntityRelationshipName": "idInvito",
+            "relationshipName": "idInvito",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200506144900",
+    "entityTableName": "collaboratore",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "frontend"
+}

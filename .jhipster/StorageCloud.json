@@ -1,0 +1,40 @@
+{
+    "name": "StorageCloud",
+    "fields": [
+        {
+            "fieldName": "idUtente",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idLicenza",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "pianoBase",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCessione",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200506145200",
+    "entityTableName": "storage_cloud",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "frontend"
+}

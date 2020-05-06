@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="eoloTestApp.licenza.home.title">Licenzas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-licenza-frontend" [routerLink]="['/licenza-frontend/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="eoloTestApp.licenza.home.createLabel">
+            Create a new Licenza
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'eoloTestApp.licenza.home.search' | translate }}">
+
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon icon="search"></fa-icon>
+                    </button>
+
+                    <button class="input-group-append btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+                        <fa-icon icon="trash-alt"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="licenzas?.length === 0">
+        <span jhiTranslate="eoloTestApp.licenza.home.notFound">No licenzas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="licenzas?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.tipologia">Tipologia</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.descrizione">Descrizione</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.dataScadenza">Data Scadenza</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let licenza of licenzas ;trackBy: trackId">
+                    <td><a [routerLink]="['/licenza-frontend', licenza.id, 'view']">{{ licenza.id }}</a></td>
+                    <td>{{ licenza.idLicenza }}</td>
+                    <td>{{ licenza.tipologia }}</td>
+                    <td>{{ licenza.descrizione }}</td>
+                    <td>{{ licenza.dataScadenza | date:'mediumDate' }}</td>
+                    <td>
+                        <div *ngIf="licenza.idLicenzaId">
+                            <a [routerLink]="['/professionista-frontend', licenza.idLicenzaId , 'view']" >{{ licenza.idLicenzaId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="licenza.idLicenzaId">
+                            <a [routerLink]="['/storage-cloud-frontend', licenza.idLicenzaId , 'view']" >{{ licenza.idLicenzaId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/licenza-frontend', licenza.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/licenza-frontend', licenza.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(licenza)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

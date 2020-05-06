@@ -1,0 +1,56 @@
+{
+    "name": "Cliente",
+    "fields": [
+        {
+            "fieldName": "idCliente",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cognome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idPraticaConnessa",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "invito",
+            "otherEntityRelationshipName": "idPratica",
+            "relationshipName": "idCliente",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "invito",
+            "otherEntityRelationshipName": "idUtente",
+            "relationshipName": "idUtente",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200506145000",
+    "entityTableName": "cliente",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "frontend"
+}

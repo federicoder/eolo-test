@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="licenza">
+            <h2><span jhiTranslate="eoloTestApp.licenza.detail.title">Licenza</span> {{ licenza.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></dt>
+                <dd>
+                    <span>{{ licenza.idLicenza }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.licenza.tipologia">Tipologia</span></dt>
+                <dd>
+                    <span>{{ licenza.tipologia }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.licenza.descrizione">Descrizione</span></dt>
+                <dd>
+                    <span>{{ licenza.descrizione }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.licenza.dataScadenza">Data Scadenza</span></dt>
+                <dd>
+                    <span>{{ licenza.dataScadenza }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></dt>
+                <dd>
+                    <div *ngIf="licenza.idLicenzaId">
+                        <a [routerLink]="['/professionista-frontend', licenza.idLicenzaId, 'view']">{{ licenza.idLicenzaId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></dt>
+                <dd>
+                    <div *ngIf="licenza.idLicenzaId">
+                        <a [routerLink]="['/storage-cloud-frontend', licenza.idLicenzaId, 'view']">{{ licenza.idLicenzaId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/licenza-frontend', licenza.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "eoloTestApp": {
+    "storageCloud": {
+      "home": {
+        "title": "Storage Clouds",
+        "createLabel": "Create a new Storage Cloud",
+        "createOrEditLabel": "Create or edit a Storage Cloud",
+        "search": "Search for Storage Cloud",
+        "notFound": "No Storage Clouds found"
+      },
+      "created": "A new Storage Cloud is created with identifier {{ param }}",
+      "updated": "A Storage Cloud is updated with identifier {{ param }}",
+      "deleted": "A Storage Cloud is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Storage Cloud {{ id }}?"
+      },
+      "detail": {
+        "title": "Storage Cloud"
+      },
+      "idUtente": "Id Utente",
+      "idLicenza": "Id Licenza",
+      "pianoBase": "Piano Base",
+      "dataCessione": "Data Cessione"
+    }
+  }
+}

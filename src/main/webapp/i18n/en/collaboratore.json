@@ -1,0 +1,31 @@
+{
+  "eoloTestApp": {
+    "collaboratore": {
+      "home": {
+        "title": "Collaboratores",
+        "createLabel": "Create a new Collaboratore",
+        "createOrEditLabel": "Create or edit a Collaboratore",
+        "search": "Search for Collaboratore",
+        "notFound": "No Collaboratores found"
+      },
+      "created": "A new Collaboratore is created with identifier {{ param }}",
+      "updated": "A Collaboratore is updated with identifier {{ param }}",
+      "deleted": "A Collaboratore is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Collaboratore {{ id }}?"
+      },
+      "detail": {
+        "title": "Collaboratore"
+      },
+      "idCollaboratore": "Id Collaboratore",
+      "nome": "Nome",
+      "cognome": "Cognome",
+      "tipologia": "Tipologia",
+      "idPratic": "Id Pratic",
+      "idInvito": "Id Invito",
+      "idCollaboratore": "Id Collaboratore",
+      "idCollaboratore": "Id Collaboratore",
+      "idInvito": "Id Invito"
+    }
+  }
+}

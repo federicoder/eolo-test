@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="collaboratore">
+            <h2><span jhiTranslate="eoloTestApp.collaboratore.detail.title">Collaboratore</span> {{ collaboratore.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eoloTestApp.collaboratore.idCollaboratore">Id Collaboratore</span></dt>
+                <dd>
+                    <span>{{ collaboratore.idCollaboratore }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.collaboratore.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ collaboratore.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.collaboratore.cognome">Cognome</span></dt>
+                <dd>
+                    <span>{{ collaboratore.cognome }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.collaboratore.tipologia">Tipologia</span></dt>
+                <dd>
+                    <span>{{ collaboratore.tipologia }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.collaboratore.idPratic">Id Pratic</span></dt>
+                <dd>
+                    <span>{{ collaboratore.idPratic }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.collaboratore.idInvito">Id Invito</span></dt>
+                <dd>
+                    <span>{{ collaboratore.idInvito }}</span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.collaboratore.idCollaboratore">Id Collaboratore</span></dt>
+                <dd>
+                    <span *ngFor="let idCollaboratore of collaboratore.idCollaboratores; let last = last">
+                        <a [routerLink]="['/invito-frontend', idCollaboratore?.id, 'view']">{{ idCollaboratore.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="eoloTestApp.collaboratore.idInvito">Id Invito</span></dt>
+                <dd>
+                    <div *ngIf="collaboratore.idInvitoId">
+                        <a [routerLink]="['/invito-frontend', collaboratore.idInvitoId, 'view']">{{ collaboratore.idInvitoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/collaboratore-frontend', collaboratore.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+{
+    "name": "Licenza",
+    "fields": [
+        {
+            "fieldName": "idLicenza",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tipologia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descrizione",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataScadenza",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "professionista",
+            "otherEntityRelationshipName": "licenza",
+            "relationshipName": "idLicenza",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "storageCloud",
+            "otherEntityRelationshipName": "licenza",
+            "relationshipName": "idLicenza",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "pratica",
+            "otherEntityRelationshipName": "idLic",
+            "relationshipName": "idLicenza"
+        }
+    ],
+    "changelogDate": "20200506144700",
+    "entityTableName": "licenza",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "frontend"
+}
