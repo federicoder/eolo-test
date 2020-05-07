@@ -60,22 +60,6 @@
                         <option [ngValue]="clienteOption.id" *ngFor="let clienteOption of clientes; trackBy: trackById">{{ clienteOption.id }}</option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.invito.pratica" for="field_pratica">Pratica</label>
-                    <select class="form-control" id="field_pratica" name="pratica" formControlName="praticaId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="praticaOption.id" *ngFor="let praticaOption of praticas; trackBy: trackById">{{ praticaOption.id }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.invito.professionista" for="field_professionista">Professionista</label>
-                    <select class="form-control" id="field_professionista" name="professionista" formControlName="professionistaId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="professionistaOption.id" *ngFor="let professionistaOption of professionistas; trackBy: trackById">{{ professionistaOption.id }}</option>
-                    </select>
-                </div>
             </div>
 
             <div>

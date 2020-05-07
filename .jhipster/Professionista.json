@@ -50,12 +50,6 @@
             "ownerSide": true
         },
         {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "invito",
-            "otherEntityRelationshipName": "professionista",
-            "relationshipName": "invito"
-        },
-        {
             "relationshipType": "one-to-one",
             "otherEntityName": "licenza",
             "otherEntityRelationshipName": "professionista",

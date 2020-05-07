@@ -1,5 +1,3 @@
-import { IInvitoFrontend } from 'app/shared/model/invito-frontend.model';
-
 export interface IPraticaFrontend {
   id?: number;
   idPratica?: number;
@@ -7,8 +5,6 @@ export interface IPraticaFrontend {
   tdp?: number;
   idCollab?: number;
   idClient?: number;
-  invitos?: IInvitoFrontend[];
-  licenzaId?: number;
 }
 
 export class PraticaFrontend implements IPraticaFrontend {
@@ -18,8 +14,6 @@ export class PraticaFrontend implements IPraticaFrontend {
     public idLic?: number,
     public tdp?: number,
     public idCollab?: number,
-    public idClient?: number,
-    public invitos?: IInvitoFrontend[],
-    public licenzaId?: number
+    public idClient?: number
   ) {}
 }

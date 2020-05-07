@@ -91,24 +91,18 @@ public class CollaboratoreResource {
      * {@code GET  /collaboratores} : get all the collaboratores.
      *
      * @param pageable the pagination information.
-     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
      * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of collaboratores in body.
      */
     @GetMapping("/collaboratores")
-    public ResponseEntity<List<CollaboratoreDTO>> getAllCollaboratores(Pageable pageable, @RequestParam(required = false) String filter, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
+    public ResponseEntity<List<CollaboratoreDTO>> getAllCollaboratores(Pageable pageable, @RequestParam(required = false) String filter) {
         if ("invito-is-null".equals(filter)) {
             log.debug("REST request to get all Collaboratores where invito is null");
             return new ResponseEntity<>(collaboratoreService.findAllWhereInvitoIsNull(),
                     HttpStatus.OK);
         }
         log.debug("REST request to get a page of Collaboratores");
-        Page<CollaboratoreDTO> page;
-        if (eagerload) {
-            page = collaboratoreService.findAllWithEagerRelationships(pageable);
-        } else {
-            page = collaboratoreService.findAll(pageable);
-        }
+        Page<CollaboratoreDTO> page = collaboratoreService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

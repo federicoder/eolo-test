@@ -46,7 +46,6 @@
                     <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.tdp">Tdp</span></th>
                     <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.idCollab">Id Collab</span></th>
                     <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.idClient">Id Client</span></th>
-                    <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.licenza">Licenza</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -58,11 +57,6 @@
                     <td>{{ pratica.tdp }}</td>
                     <td>{{ pratica.idCollab }}</td>
                     <td>{{ pratica.idClient }}</td>
-                    <td>
-                        <div *ngIf="pratica.licenzaId">
-                            <a [routerLink]="['/licenza-frontend', pratica.licenzaId , 'view']" >{{ pratica.licenzaId }}</a>
-                        </div>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

@@ -47,8 +47,6 @@
                     <th scope="col" ><span jhiTranslate="eoloTestApp.invito.idInvito">Id Invito</span></th>
                     <th scope="col" ><span jhiTranslate="eoloTestApp.invito.collaboratore">Collaboratore</span></th>
                     <th scope="col" ><span jhiTranslate="eoloTestApp.invito.cliente">Cliente</span></th>
-                    <th scope="col" ><span jhiTranslate="eoloTestApp.invito.pratica">Pratica</span></th>
-                    <th scope="col" ><span jhiTranslate="eoloTestApp.invito.professionista">Professionista</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -67,16 +65,6 @@
                     <td>
                         <div *ngIf="invito.clienteId">
                             <a [routerLink]="['/cliente-frontend', invito.clienteId , 'view']" >{{ invito.clienteId }}</a>
-                        </div>
-                    </td>
-                    <td>
-                        <div *ngIf="invito.praticaId">
-                            <a [routerLink]="['/pratica-frontend', invito.praticaId , 'view']" >{{ invito.praticaId }}</a>
-                        </div>
-                    </td>
-                    <td>
-                        <div *ngIf="invito.professionistaId">
-                            <a [routerLink]="['/professionista-frontend', invito.professionistaId , 'view']" >{{ invito.professionistaId }}</a>
                         </div>
                     </td>
                     <td class="text-right">

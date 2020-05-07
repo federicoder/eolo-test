@@ -37,42 +37,6 @@
             "relationshipName": "cliente",
             "otherEntityField": "id",
             "ownerSide": true
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "collaboratore",
-            "otherEntityRelationshipName": "invito",
-            "relationshipName": "collaboratore"
-        },
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "pratica",
-            "otherEntityRelationshipName": "invito",
-            "relationshipName": "pratica",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "professionista",
-            "otherEntityRelationshipName": "invito",
-            "relationshipName": "professionista",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipType": "many-to-many",
-            "otherEntityName": "collaboratore",
-            "otherEntityRelationshipName": "idCollaboratore",
-            "relationshipName": "idUtente",
-            "otherEntityField": "id",
-            "ownerSide": false
-        },
-        {
-            "relationshipType": "many-to-many",
-            "otherEntityName": "cliente",
-            "otherEntityRelationshipName": "idCliente",
-            "relationshipName": "idPratica",
-            "otherEntityField": "id",
-            "ownerSide": false
         }
     ],
     "changelogDate": "20200506145100",

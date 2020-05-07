@@ -34,21 +34,7 @@
             ]
         }
     ],
-    "relationships": [
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "invito",
-            "otherEntityRelationshipName": "pratica",
-            "relationshipName": "invito"
-        },
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "licenza",
-            "otherEntityRelationshipName": "pratica",
-            "relationshipName": "licenza",
-            "otherEntityField": "id"
-        }
-    ],
+    "relationships": [],
     "changelogDate": "20200506144800",
     "entityTableName": "pratica",
     "dto": "mapstruct",

@@ -80,14 +80,6 @@
                         </small>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.pratica.licenza" for="field_licenza">Licenza</label>
-                    <select class="form-control" id="field_licenza" name="licenza" formControlName="licenzaId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="licenzaOption.id" *ngFor="let licenzaOption of licenzas; trackBy: trackById">{{ licenzaOption.id }}</option>
-                    </select>
-                </div>
             </div>
 
             <div>

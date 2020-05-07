@@ -12,12 +12,8 @@ import { ICollaboratoreFrontend } from 'app/shared/model/collaboratore-frontend.
 import { CollaboratoreFrontendService } from 'app/entities/collaboratore-frontend/collaboratore-frontend.service';
 import { IClienteFrontend } from 'app/shared/model/cliente-frontend.model';
 import { ClienteFrontendService } from 'app/entities/cliente-frontend/cliente-frontend.service';
-import { IPraticaFrontend } from 'app/shared/model/pratica-frontend.model';
-import { PraticaFrontendService } from 'app/entities/pratica-frontend/pratica-frontend.service';
-import { IProfessionistaFrontend } from 'app/shared/model/professionista-frontend.model';
-import { ProfessionistaFrontendService } from 'app/entities/professionista-frontend/professionista-frontend.service';
 
-type SelectableEntity = ICollaboratoreFrontend | IClienteFrontend | IPraticaFrontend | IProfessionistaFrontend;
+type SelectableEntity = ICollaboratoreFrontend | IClienteFrontend;
 
 @Component({
   selector: 'jhi-invito-frontend-update',
@@ -27,8 +23,6 @@ export class InvitoFrontendUpdateComponent implements OnInit {
   isSaving = false;
   collaboratores: ICollaboratoreFrontend[] = [];
   clientes: IClienteFrontend[] = [];
-  praticas: IPraticaFrontend[] = [];
-  professionistas: IProfessionistaFrontend[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -37,17 +31,13 @@ export class InvitoFrontendUpdateComponent implements OnInit {
     idPratica: [],
     idInvito: [null, [Validators.required]],
     collaboratoreId: [],
-    clienteId: [],
-    praticaId: [],
-    professionistaId: []
+    clienteId: []
   });
 
   constructor(
     protected invitoService: InvitoFrontendService,
     protected collaboratoreService: CollaboratoreFrontendService,
     protected clienteService: ClienteFrontendService,
-    protected praticaService: PraticaFrontendService,
-    protected professionistaService: ProfessionistaFrontendService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -99,12 +89,6 @@ export class InvitoFrontendUpdateComponent implements OnInit {
               .subscribe((concatRes: IClienteFrontend[]) => (this.clientes = concatRes));
           }
         });
-
-      this.praticaService.query().subscribe((res: HttpResponse<IPraticaFrontend[]>) => (this.praticas = res.body || []));
-
-      this.professionistaService
-        .query()
-        .subscribe((res: HttpResponse<IProfessionistaFrontend[]>) => (this.professionistas = res.body || []));
     });
   }
 
@@ -116,9 +100,7 @@ export class InvitoFrontendUpdateComponent implements OnInit {
       idPratica: invito.idPratica,
       idInvito: invito.idInvito,
       collaboratoreId: invito.collaboratoreId,
-      clienteId: invito.clienteId,
-      praticaId: invito.praticaId,
-      professionistaId: invito.professionistaId
+      clienteId: invito.clienteId
     });
   }
 
@@ -145,9 +127,7 @@ export class InvitoFrontendUpdateComponent implements OnInit {
       idPratica: this.editForm.get(['idPratica'])!.value,
       idInvito: this.editForm.get(['idInvito'])!.value,
       collaboratoreId: this.editForm.get(['collaboratoreId'])!.value,
-      clienteId: this.editForm.get(['clienteId'])!.value,
-      praticaId: this.editForm.get(['praticaId'])!.value,
-      professionistaId: this.editForm.get(['professionistaId'])!.value
+      clienteId: this.editForm.get(['clienteId'])!.value
     };
   }
 

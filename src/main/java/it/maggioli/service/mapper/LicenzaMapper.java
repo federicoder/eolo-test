@@ -18,8 +18,6 @@ public interface LicenzaMapper extends EntityMapper<LicenzaDTO, Licenza> {
 
     @Mapping(source = "professionistaId", target = "professionista")
     @Mapping(source = "storageCloudId", target = "storageCloud")
-    @Mapping(target = "praticas", ignore = true)
-    @Mapping(target = "removePratica", ignore = true)
     Licenza toEntity(LicenzaDTO licenzaDTO);
 
     default Licenza fromId(Long id) {

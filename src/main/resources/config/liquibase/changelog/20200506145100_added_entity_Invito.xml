@@ -33,12 +33,6 @@
             <column name="cliente_id" type="bigint">
                 <constraints unique="true" nullable="true" uniqueConstraintName="ux_invito_cliente_id" />
             </column>
-            <column name="pratica_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-            <column name="professionista_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
     </changeSet>

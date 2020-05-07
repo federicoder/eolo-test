@@ -24,10 +24,6 @@ public class InvitoDTO implements Serializable {
     private Long collaboratoreId;
 
     private Long clienteId;
-
-    private Long praticaId;
-
-    private Long professionistaId;
     
     public Long getId() {
         return id;
@@ -85,22 +81,6 @@ public class InvitoDTO implements Serializable {
         this.clienteId = clienteId;
     }
 
-    public Long getPraticaId() {
-        return praticaId;
-    }
-
-    public void setPraticaId(Long praticaId) {
-        this.praticaId = praticaId;
-    }
-
-    public Long getProfessionistaId() {
-        return professionistaId;
-    }
-
-    public void setProfessionistaId(Long professionistaId) {
-        this.professionistaId = professionistaId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -132,8 +112,6 @@ public class InvitoDTO implements Serializable {
             ", idInvito=" + getIdInvito() +
             ", collaboratoreId=" + getCollaboratoreId() +
             ", clienteId=" + getClienteId() +
-            ", praticaId=" + getPraticaId() +
-            ", professionistaId=" + getProfessionistaId() +
             "}";
     }
 }

@@ -16,8 +16,6 @@ public interface ProfessionistaMapper extends EntityMapper<ProfessionistaDTO, Pr
     ProfessionistaDTO toDto(Professionista professionista);
 
     @Mapping(source = "storageCloudId", target = "storageCloud")
-    @Mapping(target = "invitos", ignore = true)
-    @Mapping(target = "removeInvito", ignore = true)
     @Mapping(target = "licenza", ignore = true)
     Professionista toEntity(ProfessionistaDTO professionistaDTO);
 

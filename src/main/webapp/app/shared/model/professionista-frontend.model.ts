@@ -1,5 +1,3 @@
-import { IInvitoFrontend } from 'app/shared/model/invito-frontend.model';
-
 export interface IProfessionistaFrontend {
   id?: number;
   idProfessionista?: number;
@@ -11,7 +9,6 @@ export interface IProfessionistaFrontend {
   studioAssociato?: string;
   idLicenza?: number;
   storageCloudId?: number;
-  invitos?: IInvitoFrontend[];
   licenzaId?: number;
 }
 
@@ -27,7 +24,6 @@ export class ProfessionistaFrontend implements IProfessionistaFrontend {
     public studioAssociato?: string,
     public idLicenza?: number,
     public storageCloudId?: number,
-    public invitos?: IInvitoFrontend[],
     public licenzaId?: number
   ) {}
 }

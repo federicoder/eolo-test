@@ -24,12 +24,6 @@
                 <dd>
                     <span>{{ cliente.idPraticaConnessa }}</span>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.cliente.idCliente">Id Cliente</span></dt>
-                <dd>
-                    <span *ngFor="let idCliente of cliente.idClientes; let last = last">
-                        <a [routerLink]="['/invito-frontend', idCliente?.id, 'view']">{{ idCliente.id }}</a>{{ last ? '' : ', ' }}
-                    </span>
-                </dd>
             </dl>
 
             <button type="submit"

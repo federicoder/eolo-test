@@ -20,17 +20,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="cliente"/>
 
-        <addForeignKeyConstraint baseColumnNames="pratica_id"
-                                 baseTableName="invito"
-                                 constraintName="fk_invito_pratica_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="pratica"/>
-
-        <addForeignKeyConstraint baseColumnNames="professionista_id"
-                                 baseTableName="invito"
-                                 constraintName="fk_invito_professionista_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="professionista"/>
-
     </changeSet>
 </databaseChangeLog>

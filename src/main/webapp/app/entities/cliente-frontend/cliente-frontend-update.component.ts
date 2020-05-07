@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 
 import { IClienteFrontend, ClienteFrontend } from 'app/shared/model/cliente-frontend.model';
 import { ClienteFrontendService } from './cliente-frontend.service';
-import { IInvitoFrontend } from 'app/shared/model/invito-frontend.model';
-import { InvitoFrontendService } from 'app/entities/invito-frontend/invito-frontend.service';
 
 @Component({
   selector: 'jhi-cliente-frontend-update',
@@ -16,29 +14,20 @@ import { InvitoFrontendService } from 'app/entities/invito-frontend/invito-front
 })
 export class ClienteFrontendUpdateComponent implements OnInit {
   isSaving = false;
-  invitos: IInvitoFrontend[] = [];
 
   editForm = this.fb.group({
     id: [],
     idCliente: [null, [Validators.required]],
     nome: [],
     cognome: [],
-    idPraticaConnessa: [null, [Validators.required]],
-    idClientes: []
+    idPraticaConnessa: [null, [Validators.required]]
   });
 
-  constructor(
-    protected clienteService: ClienteFrontendService,
-    protected invitoService: InvitoFrontendService,
-    protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
-  ) {}
+  constructor(protected clienteService: ClienteFrontendService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ cliente }) => {
       this.updateForm(cliente);
-
-      this.invitoService.query().subscribe((res: HttpResponse<IInvitoFrontend[]>) => (this.invitos = res.body || []));
     });
   }
 
@@ -48,8 +37,7 @@ export class ClienteFrontendUpdateComponent implements OnInit {
       idCliente: cliente.idCliente,
       nome: cliente.nome,
       cognome: cliente.cognome,
-      idPraticaConnessa: cliente.idPraticaConnessa,
-      idClientes: cliente.idClientes
+      idPraticaConnessa: cliente.idPraticaConnessa
     });
   }
 
@@ -74,8 +62,7 @@ export class ClienteFrontendUpdateComponent implements OnInit {
       idCliente: this.editForm.get(['idCliente'])!.value,
       nome: this.editForm.get(['nome'])!.value,
       cognome: this.editForm.get(['cognome'])!.value,
-      idPraticaConnessa: this.editForm.get(['idPraticaConnessa'])!.value,
-      idClientes: this.editForm.get(['idClientes'])!.value
+      idPraticaConnessa: this.editForm.get(['idPraticaConnessa'])!.value
     };
   }
 
@@ -93,20 +80,5 @@ export class ClienteFrontendUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
-  }
-
-  trackById(index: number, item: IInvitoFrontend): any {
-    return item.id;
-  }
-
-  getSelected(selectedVals: IInvitoFrontend[], option: IInvitoFrontend): IInvitoFrontend {
-    if (selectedVals) {
-      for (let i = 0; i < selectedVals.length; i++) {
-        if (option.id === selectedVals[i].id) {
-          return selectedVals[i];
-        }
-      }
-    }
-    return option;
   }
 }

@@ -37,12 +37,6 @@
             "relationshipName": "storageCloud",
             "otherEntityField": "id",
             "ownerSide": true
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "pratica",
-            "otherEntityRelationshipName": "licenza",
-            "relationshipName": "pratica"
         }
     ],
     "changelogDate": "20200506144700",

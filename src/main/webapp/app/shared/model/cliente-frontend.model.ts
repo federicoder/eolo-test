@@ -1,12 +1,9 @@
-import { IInvitoFrontend } from 'app/shared/model/invito-frontend.model';
-
 export interface IClienteFrontend {
   id?: number;
   idCliente?: number;
   nome?: string;
   cognome?: string;
   idPraticaConnessa?: number;
-  idClientes?: IInvitoFrontend[];
   invitoId?: number;
 }
 
@@ -17,7 +14,6 @@ export class ClienteFrontend implements IClienteFrontend {
     public nome?: string,
     public cognome?: string,
     public idPraticaConnessa?: number,
-    public idClientes?: IInvitoFrontend[],
     public invitoId?: number
   ) {}
 }

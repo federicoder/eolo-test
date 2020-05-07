@@ -10,8 +10,6 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.util.Objects;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Licenza.
@@ -49,10 +47,6 @@ public class Licenza implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private StorageCloud storageCloud;
-
-    @OneToMany(mappedBy = "licenza")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Pratica> praticas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -139,31 +133,6 @@ public class Licenza implements Serializable {
 
     public void setStorageCloud(StorageCloud storageCloud) {
         this.storageCloud = storageCloud;
-    }
-
-    public Set<Pratica> getPraticas() {
-        return praticas;
-    }
-
-    public Licenza praticas(Set<Pratica> praticas) {
-        this.praticas = praticas;
-        return this;
-    }
-
-    public Licenza addPratica(Pratica pratica) {
-        this.praticas.add(pratica);
-        pratica.setLicenza(this);
-        return this;
-    }
-
-    public Licenza removePratica(Pratica pratica) {
-        this.praticas.remove(pratica);
-        pratica.setLicenza(null);
-        return this;
-    }
-
-    public void setPraticas(Set<Pratica> praticas) {
-        this.praticas = praticas;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -70,15 +70,6 @@ public class CollaboratoreService {
             .map(collaboratoreMapper::toDto);
     }
 
-    /**
-     * Get all the collaboratores with eager load of many-to-many relationships.
-     *
-     * @return the list of entities.
-     */
-    public Page<CollaboratoreDTO> findAllWithEagerRelationships(Pageable pageable) {
-        return collaboratoreRepository.findAllWithEagerRelationships(pageable).map(collaboratoreMapper::toDto);
-    }
-
 
     /**
      *  Get all the collaboratores where Invito is {@code null}.
@@ -103,7 +94,7 @@ public class CollaboratoreService {
     @Transactional(readOnly = true)
     public Optional<CollaboratoreDTO> findOne(Long id) {
         log.debug("Request to get Collaboratore : {}", id);
-        return collaboratoreRepository.findOneWithEagerRelationships(id)
+        return collaboratoreRepository.findById(id)
             .map(collaboratoreMapper::toDto);
     }
 

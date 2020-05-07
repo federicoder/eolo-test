@@ -28,12 +28,6 @@
                 <dd>
                     <span>{{ pratica.idClient }}</span>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.pratica.licenza">Licenza</span></dt>
-                <dd>
-                    <div *ngIf="pratica.licenzaId">
-                        <a [routerLink]="['/licenza-frontend', pratica.licenzaId, 'view']">{{ pratica.licenzaId }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

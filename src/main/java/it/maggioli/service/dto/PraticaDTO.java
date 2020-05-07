@@ -25,8 +25,6 @@ public class PraticaDTO implements Serializable {
     @NotNull
     private Integer idClient;
 
-
-    private Long licenzaId;
     
     public Long getId() {
         return id;
@@ -76,14 +74,6 @@ public class PraticaDTO implements Serializable {
         this.idClient = idClient;
     }
 
-    public Long getLicenzaId() {
-        return licenzaId;
-    }
-
-    public void setLicenzaId(Long licenzaId) {
-        this.licenzaId = licenzaId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -114,7 +104,6 @@ public class PraticaDTO implements Serializable {
             ", tdp=" + getTdp() +
             ", idCollab=" + getIdCollab() +
             ", idClient=" + getIdClient() +
-            ", licenzaId=" + getLicenzaId() +
             "}";
     }
 }
