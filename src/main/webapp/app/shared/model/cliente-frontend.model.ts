@@ -7,6 +7,7 @@ export interface IClienteFrontend {
   cognome?: string;
   idPraticaConnessa?: number;
   idClientes?: IInvitoFrontend[];
+  invitoId?: number;
 }
 
 export class ClienteFrontend implements IClienteFrontend {
@@ -16,6 +17,7 @@ export class ClienteFrontend implements IClienteFrontend {
     public nome?: string,
     public cognome?: string,
     public idPraticaConnessa?: number,
-    public idClientes?: IInvitoFrontend[]
+    public idClientes?: IInvitoFrontend[],
+    public invitoId?: number
   ) {}
 }

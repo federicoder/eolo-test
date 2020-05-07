@@ -50,10 +50,10 @@ public class Pratica implements Serializable {
 
     @OneToMany(mappedBy = "pratica")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Invito> idPraticas = new HashSet<>();
+    private Set<Invito> invitos = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties("idLicenzas")
+    @JsonIgnoreProperties("praticas")
     private Licenza licenza;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -130,29 +130,29 @@ public class Pratica implements Serializable {
         this.idClient = idClient;
     }
 
-    public Set<Invito> getIdPraticas() {
-        return idPraticas;
+    public Set<Invito> getInvitos() {
+        return invitos;
     }
 
-    public Pratica idPraticas(Set<Invito> invitos) {
-        this.idPraticas = invitos;
+    public Pratica invitos(Set<Invito> invitos) {
+        this.invitos = invitos;
         return this;
     }
 
-    public Pratica addIdPratica(Invito invito) {
-        this.idPraticas.add(invito);
+    public Pratica addInvito(Invito invito) {
+        this.invitos.add(invito);
         invito.setPratica(this);
         return this;
     }
 
-    public Pratica removeIdPratica(Invito invito) {
-        this.idPraticas.remove(invito);
+    public Pratica removeInvito(Invito invito) {
+        this.invitos.remove(invito);
         invito.setPratica(null);
         return this;
     }
 
-    public void setIdPraticas(Set<Invito> invitos) {
-        this.idPraticas = invitos;
+    public void setInvitos(Set<Invito> invitos) {
+        this.invitos = invitos;
     }
 
     public Licenza getLicenza() {

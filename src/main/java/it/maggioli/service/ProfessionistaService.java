@@ -5,6 +5,7 @@ import it.maggioli.service.dto.ProfessionistaDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -27,6 +28,12 @@ public interface ProfessionistaService {
      * @return the list of entities.
      */
     Page<ProfessionistaDTO> findAll(Pageable pageable);
+    /**
+     * Get all the ProfessionistaDTO where Licenza is {@code null}.
+     *
+     * @return the list of entities.
+     */
+    List<ProfessionistaDTO> findAllWhereLicenzaIsNull();
 
     /**
      * Get the "id" professionista.

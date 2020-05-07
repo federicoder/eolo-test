@@ -15,8 +15,8 @@ public interface PraticaMapper extends EntityMapper<PraticaDTO, Pratica> {
     @Mapping(source = "licenza.id", target = "licenzaId")
     PraticaDTO toDto(Pratica pratica);
 
-    @Mapping(target = "idPraticas", ignore = true)
-    @Mapping(target = "removeIdPratica", ignore = true)
+    @Mapping(target = "invitos", ignore = true)
+    @Mapping(target = "removeInvito", ignore = true)
     @Mapping(source = "licenzaId", target = "licenza")
     Pratica toEntity(PraticaDTO praticaDTO);
 

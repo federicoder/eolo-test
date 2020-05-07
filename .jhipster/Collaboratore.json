@@ -44,14 +44,14 @@
         {
             "relationshipType": "one-to-one",
             "otherEntityName": "invito",
-            "otherEntityRelationshipName": "idUtente",
-            "relationshipName": "idCollaboratore",
+            "otherEntityRelationshipName": "collaboratore",
+            "relationshipName": "invito",
             "ownerSide": false
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "invito",
-            "otherEntityRelationshipName": "idInvito",
+            "otherEntityRelationshipName": "collaboratore",
             "relationshipName": "invito",
             "otherEntityField": "id"
         }

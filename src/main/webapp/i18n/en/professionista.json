@@ -25,8 +25,9 @@
       "pIva": "P Iva",
       "studioAssociato": "Studio Associato",
       "idLicenza": "Id Licenza",
-      "idProfessionista": "Id Professionista",
-      "idProfessionista": "Id Professionista"
+      "storageCloud": "Storage Cloud",
+      "invito": "Invito",
+      "licenza": "Licenza"
     }
   }
 }

@@ -16,7 +16,7 @@ public interface CollaboratoreMapper extends EntityMapper<CollaboratoreDTO, Coll
     CollaboratoreDTO toDto(Collaboratore collaboratore);
 
     @Mapping(target = "removeIdCollaboratore", ignore = true)
-    @Mapping(target = "idCollaboratore", ignore = true)
+    @Mapping(target = "invito", ignore = true)
     @Mapping(source = "invitoId", target = "invito")
     Collaboratore toEntity(CollaboratoreDTO collaboratoreDTO);
 

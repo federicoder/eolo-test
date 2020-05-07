@@ -21,8 +21,8 @@ type SelectableEntity = IProfessionistaFrontend | IStorageCloudFrontend;
 })
 export class LicenzaFrontendUpdateComponent implements OnInit {
   isSaving = false;
-  idlicenzas: IProfessionistaFrontend[] = [];
-  idlicenzas: IStorageCloudFrontend[] = [];
+  professionistas: IProfessionistaFrontend[] = [];
+  storageclouds: IStorageCloudFrontend[] = [];
   dataScadenzaDp: any;
 
   editForm = this.fb.group({
@@ -31,8 +31,8 @@ export class LicenzaFrontendUpdateComponent implements OnInit {
     tipologia: [],
     descrizione: [],
     dataScadenza: [],
-    idLicenzaId: [],
-    idLicenzaId: []
+    professionistaId: [],
+    storageCloudId: []
   });
 
   constructor(
@@ -55,17 +55,17 @@ export class LicenzaFrontendUpdateComponent implements OnInit {
           })
         )
         .subscribe((resBody: IProfessionistaFrontend[]) => {
-          if (!licenza.idLicenzaId) {
-            this.idlicenzas = resBody;
+          if (!licenza.professionistaId) {
+            this.professionistas = resBody;
           } else {
             this.professionistaService
-              .find(licenza.idLicenzaId)
+              .find(licenza.professionistaId)
               .pipe(
                 map((subRes: HttpResponse<IProfessionistaFrontend>) => {
                   return subRes.body ? [subRes.body].concat(resBody) : resBody;
                 })
               )
-              .subscribe((concatRes: IProfessionistaFrontend[]) => (this.idlicenzas = concatRes));
+              .subscribe((concatRes: IProfessionistaFrontend[]) => (this.professionistas = concatRes));
           }
         });
 
@@ -77,17 +77,17 @@ export class LicenzaFrontendUpdateComponent implements OnInit {
           })
         )
         .subscribe((resBody: IStorageCloudFrontend[]) => {
-          if (!licenza.idLicenzaId) {
-            this.idlicenzas = resBody;
+          if (!licenza.storageCloudId) {
+            this.storageclouds = resBody;
           } else {
             this.storageCloudService
-              .find(licenza.idLicenzaId)
+              .find(licenza.storageCloudId)
               .pipe(
                 map((subRes: HttpResponse<IStorageCloudFrontend>) => {
                   return subRes.body ? [subRes.body].concat(resBody) : resBody;
                 })
               )
-              .subscribe((concatRes: IStorageCloudFrontend[]) => (this.idlicenzas = concatRes));
+              .subscribe((concatRes: IStorageCloudFrontend[]) => (this.storageclouds = concatRes));
           }
         });
     });
@@ -100,8 +100,8 @@ export class LicenzaFrontendUpdateComponent implements OnInit {
       tipologia: licenza.tipologia,
       descrizione: licenza.descrizione,
       dataScadenza: licenza.dataScadenza,
-      idLicenzaId: licenza.idLicenzaId,
-      idLicenzaId: licenza.idLicenzaId
+      professionistaId: licenza.professionistaId,
+      storageCloudId: licenza.storageCloudId
     });
   }
 
@@ -127,8 +127,8 @@ export class LicenzaFrontendUpdateComponent implements OnInit {
       tipologia: this.editForm.get(['tipologia'])!.value,
       descrizione: this.editForm.get(['descrizione'])!.value,
       dataScadenza: this.editForm.get(['dataScadenza'])!.value,
-      idLicenzaId: this.editForm.get(['idLicenzaId'])!.value,
-      idLicenzaId: this.editForm.get(['idLicenzaId'])!.value
+      professionistaId: this.editForm.get(['professionistaId'])!.value,
+      storageCloudId: this.editForm.get(['storageCloudId'])!.value
     };
   }
 

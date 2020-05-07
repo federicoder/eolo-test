@@ -25,8 +25,8 @@
         {
             "relationshipType": "one-to-one",
             "otherEntityName": "collaboratore",
-            "otherEntityRelationshipName": "idCollaboratore",
-            "relationshipName": "idUtente",
+            "otherEntityRelationshipName": "invito",
+            "relationshipName": "collaboratore",
             "otherEntityField": "id",
             "ownerSide": true
         },
@@ -34,7 +34,7 @@
             "relationshipType": "one-to-one",
             "otherEntityName": "cliente",
             "otherEntityRelationshipName": "invito",
-            "relationshipName": "idUtente",
+            "relationshipName": "cliente",
             "otherEntityField": "id",
             "ownerSide": true
         },
@@ -42,20 +42,20 @@
             "relationshipType": "one-to-many",
             "otherEntityName": "collaboratore",
             "otherEntityRelationshipName": "invito",
-            "relationshipName": "idInvito"
+            "relationshipName": "collaboratore"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "pratica",
-            "otherEntityRelationshipName": "idPratica",
+            "otherEntityRelationshipName": "invito",
             "relationshipName": "pratica",
             "otherEntityField": "id"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "professionista",
-            "otherEntityRelationshipName": "idProfessionista",
-            "relationshipName": "idUtente",
+            "otherEntityRelationshipName": "invito",
+            "relationshipName": "professionista",
             "otherEntityField": "id"
         },
         {
