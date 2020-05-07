@@ -60,17 +60,17 @@ enum AmpliamentoStorage{
 }
 
 relationship OneToOne {
-	Licenza{idLicenza} to Professionista,
-	Invito{idUtente} to Collaboratore{idCollaboratore},
-    Invito{idUtente} to Cliente,
-    Licenza{idLicenza} to StorageCloud,
-    Professionista{idProfessionista} to StorageCloud,
+	Licenza to Professionista,
+	Invito to Collaboratore,
+    Invito to Cliente,
+    Licenza to StorageCloud,
+    Professionista to StorageCloud,
 }
 relationship OneToMany{
-	Licenza{idLicenza} to Pratica,
-    Pratica{idPratica} to Invito,
-	Professionista{idProfessionista} to Invito{idUtente}
-    Invito{idInvito} to Collaboratore
+	Licenza to Pratica,
+    Pratica to Invito,
+	Professionista to Invito
+    Invito to Collaboratore
 }
 relationship ManyToMany{
     Collaboratore{idCollaboratore} to Invito{idUtente}

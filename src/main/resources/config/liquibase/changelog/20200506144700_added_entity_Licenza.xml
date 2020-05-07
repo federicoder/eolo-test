@@ -27,11 +27,11 @@
             <column name="data_scadenza" type="date">
                 <constraints nullable="true" />
             </column>
-            <column name="id_licenza_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_licenza_id_licenza_id" />
+            <column name="professionista_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_licenza_professionista_id" />
             </column>
-            <column name="id_licenza_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_licenza_id_licenza_id" />
+            <column name="storage_cloud_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_licenza_storage_cloud_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>

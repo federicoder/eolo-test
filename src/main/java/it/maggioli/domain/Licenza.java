@@ -44,15 +44,15 @@ public class Licenza implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Professionista idLicenza;
+    private Professionista professionista;
 
     @OneToOne
     @JoinColumn(unique = true)
-    private StorageCloud idLicenza;
+    private StorageCloud storageCloud;
 
     @OneToMany(mappedBy = "licenza")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Pratica> idLicenzas = new HashSet<>();
+    private Set<Pratica> praticas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -115,55 +115,55 @@ public class Licenza implements Serializable {
         this.dataScadenza = dataScadenza;
     }
 
-    public Professionista getIdLicenza() {
-        return idLicenza;
+    public Professionista getProfessionista() {
+        return professionista;
     }
 
-    public Licenza idLicenza(Professionista professionista) {
-        this.idLicenza = professionista;
+    public Licenza professionista(Professionista professionista) {
+        this.professionista = professionista;
         return this;
     }
 
-    public void setIdLicenza(Professionista professionista) {
-        this.idLicenza = professionista;
+    public void setProfessionista(Professionista professionista) {
+        this.professionista = professionista;
     }
 
-    public StorageCloud getIdLicenza() {
-        return idLicenza;
+    public StorageCloud getStorageCloud() {
+        return storageCloud;
     }
 
-    public Licenza idLicenza(StorageCloud storageCloud) {
-        this.idLicenza = storageCloud;
+    public Licenza storageCloud(StorageCloud storageCloud) {
+        this.storageCloud = storageCloud;
         return this;
     }
 
-    public void setIdLicenza(StorageCloud storageCloud) {
-        this.idLicenza = storageCloud;
+    public void setStorageCloud(StorageCloud storageCloud) {
+        this.storageCloud = storageCloud;
     }
 
-    public Set<Pratica> getIdLicenzas() {
-        return idLicenzas;
+    public Set<Pratica> getPraticas() {
+        return praticas;
     }
 
-    public Licenza idLicenzas(Set<Pratica> praticas) {
-        this.idLicenzas = praticas;
+    public Licenza praticas(Set<Pratica> praticas) {
+        this.praticas = praticas;
         return this;
     }
 
-    public Licenza addIdLicenza(Pratica pratica) {
-        this.idLicenzas.add(pratica);
+    public Licenza addPratica(Pratica pratica) {
+        this.praticas.add(pratica);
         pratica.setLicenza(this);
         return this;
     }
 
-    public Licenza removeIdLicenza(Pratica pratica) {
-        this.idLicenzas.remove(pratica);
+    public Licenza removePratica(Pratica pratica) {
+        this.praticas.remove(pratica);
         pratica.setLicenza(null);
         return this;
     }
 
-    public void setIdLicenzas(Set<Pratica> praticas) {
-        this.idLicenzas = praticas;
+    public void setPraticas(Set<Pratica> praticas) {
+        this.praticas = praticas;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -81,15 +81,15 @@ public class CollaboratoreService {
 
 
     /**
-     *  Get all the collaboratores where IdCollaboratore is {@code null}.
+     *  Get all the collaboratores where Invito is {@code null}.
      *  @return the list of entities.
      */
     @Transactional(readOnly = true) 
-    public List<CollaboratoreDTO> findAllWhereIdCollaboratoreIsNull() {
-        log.debug("Request to get all collaboratores where IdCollaboratore is null");
+    public List<CollaboratoreDTO> findAllWhereInvitoIsNull() {
+        log.debug("Request to get all collaboratores where Invito is null");
         return StreamSupport
             .stream(collaboratoreRepository.findAll().spliterator(), false)
-            .filter(collaboratore -> collaboratore.getIdCollaboratore() == null)
+            .filter(collaboratore -> collaboratore.getInvito() == null)
             .map(collaboratoreMapper::toDto)
             .collect(Collectors.toCollection(LinkedList::new));
     }

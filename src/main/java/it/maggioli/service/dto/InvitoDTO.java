@@ -21,13 +21,13 @@ public class InvitoDTO implements Serializable {
     private Integer idInvito;
 
 
-    private Long idUtenteId;
+    private Long collaboratoreId;
 
-    private Long idUtenteId;
+    private Long clienteId;
 
     private Long praticaId;
 
-    private Long idUtenteId;
+    private Long professionistaId;
     
     public Long getId() {
         return id;
@@ -69,20 +69,20 @@ public class InvitoDTO implements Serializable {
         this.idInvito = idInvito;
     }
 
-    public Long getIdUtenteId() {
-        return idUtenteId;
+    public Long getCollaboratoreId() {
+        return collaboratoreId;
     }
 
-    public void setIdUtenteId(Long collaboratoreId) {
-        this.idUtenteId = collaboratoreId;
+    public void setCollaboratoreId(Long collaboratoreId) {
+        this.collaboratoreId = collaboratoreId;
     }
 
-    public Long getIdUtenteId() {
-        return idUtenteId;
+    public Long getClienteId() {
+        return clienteId;
     }
 
-    public void setIdUtenteId(Long clienteId) {
-        this.idUtenteId = clienteId;
+    public void setClienteId(Long clienteId) {
+        this.clienteId = clienteId;
     }
 
     public Long getPraticaId() {
@@ -93,12 +93,12 @@ public class InvitoDTO implements Serializable {
         this.praticaId = praticaId;
     }
 
-    public Long getIdUtenteId() {
-        return idUtenteId;
+    public Long getProfessionistaId() {
+        return professionistaId;
     }
 
-    public void setIdUtenteId(Long professionistaId) {
-        this.idUtenteId = professionistaId;
+    public void setProfessionistaId(Long professionistaId) {
+        this.professionistaId = professionistaId;
     }
 
     @Override
@@ -130,10 +130,10 @@ public class InvitoDTO implements Serializable {
             ", idUtente=" + getIdUtente() +
             ", idPratica=" + getIdPratica() +
             ", idInvito=" + getIdInvito() +
-            ", idUtenteId=" + getIdUtenteId() +
-            ", idUtenteId=" + getIdUtenteId() +
+            ", collaboratoreId=" + getCollaboratoreId() +
+            ", clienteId=" + getClienteId() +
             ", praticaId=" + getPraticaId() +
-            ", idUtenteId=" + getIdUtenteId() +
+            ", professionistaId=" + getProfessionistaId() +
             "}";
     }
 }

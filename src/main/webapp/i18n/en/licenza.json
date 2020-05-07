@@ -21,9 +21,9 @@
       "tipologia": "Tipologia",
       "descrizione": "Descrizione",
       "dataScadenza": "Data Scadenza",
-      "idLicenza": "Id Licenza",
-      "idLicenza": "Id Licenza",
-      "idLicenza": "Id Licenza"
+      "professionista": "Professionista",
+      "storageCloud": "Storage Cloud",
+      "pratica": "Pratica"
     }
   }
 }

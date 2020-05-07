@@ -57,12 +57,12 @@ public class Collaboratore implements Serializable {
                inverseJoinColumns = @JoinColumn(name = "id_collaboratore_id", referencedColumnName = "id"))
     private Set<Invito> idCollaboratores = new HashSet<>();
 
-    @OneToOne(mappedBy = "idUtente")
+    @OneToOne(mappedBy = "collaboratore")
     @JsonIgnore
-    private Invito idCollaboratore;
+    private Invito invito;
 
     @ManyToOne
-    @JsonIgnoreProperties("idInvitos")
+    @JsonIgnoreProperties("collaboratores")
     private Invito invito;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -177,17 +177,17 @@ public class Collaboratore implements Serializable {
         this.idCollaboratores = invitos;
     }
 
-    public Invito getIdCollaboratore() {
-        return idCollaboratore;
+    public Invito getInvito() {
+        return invito;
     }
 
-    public Collaboratore idCollaboratore(Invito invito) {
-        this.idCollaboratore = invito;
+    public Collaboratore invito(Invito invito) {
+        this.invito = invito;
         return this;
     }
 
-    public void setIdCollaboratore(Invito invito) {
-        this.idCollaboratore = invito;
+    public void setInvito(Invito invito) {
+        this.invito = invito;
     }
 
     public Invito getInvito() {

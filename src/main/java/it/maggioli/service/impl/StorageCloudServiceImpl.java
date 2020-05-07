@@ -71,6 +71,36 @@ public class StorageCloudServiceImpl implements StorageCloudService {
             .collect(Collectors.toCollection(LinkedList::new));
     }
 
+
+    /**
+     *  Get all the storageClouds where Licenza is {@code null}.
+     *  @return the list of entities.
+     */
+    @Transactional(readOnly = true) 
+    public List<StorageCloudDTO> findAllWhereLicenzaIsNull() {
+        log.debug("Request to get all storageClouds where Licenza is null");
+        return StreamSupport
+            .stream(storageCloudRepository.findAll().spliterator(), false)
+            .filter(storageCloud -> storageCloud.getLicenza() == null)
+            .map(storageCloudMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
+    }
+
+
+    /**
+     *  Get all the storageClouds where Professionista is {@code null}.
+     *  @return the list of entities.
+     */
+    @Transactional(readOnly = true) 
+    public List<StorageCloudDTO> findAllWhereProfessionistaIsNull() {
+        log.debug("Request to get all storageClouds where Professionista is null");
+        return StreamSupport
+            .stream(storageCloudRepository.findAll().spliterator(), false)
+            .filter(storageCloud -> storageCloud.getProfessionista() == null)
+            .map(storageCloudMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
+    }
+
     /**
      * Get one storageCloud by id.
      *

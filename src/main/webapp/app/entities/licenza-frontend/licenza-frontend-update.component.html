@@ -50,18 +50,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.licenza.idLicenza" for="field_idLicenza">Id Licenza</label>
-                    <select class="form-control" id="field_idLicenza" name="idLicenza" formControlName="idLicenzaId">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.licenza.professionista" for="field_professionista">Professionista</label>
+                    <select class="form-control" id="field_professionista" name="professionista" formControlName="professionistaId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="professionistaOption.id" *ngFor="let professionistaOption of idlicenzas; trackBy: trackById">{{ professionistaOption.id }}</option>
+                        <option [ngValue]="professionistaOption.id" *ngFor="let professionistaOption of professionistas; trackBy: trackById">{{ professionistaOption.id }}</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.licenza.idLicenza" for="field_idLicenza">Id Licenza</label>
-                    <select class="form-control" id="field_idLicenza" name="idLicenza" formControlName="idLicenzaId">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.licenza.storageCloud" for="field_storageCloud">Storage Cloud</label>
+                    <select class="form-control" id="field_storageCloud" name="storageCloud" formControlName="storageCloudId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="storageCloudOption.id" *ngFor="let storageCloudOption of idlicenzas; trackBy: trackById">{{ storageCloudOption.id }}</option>
+                        <option [ngValue]="storageCloudOption.id" *ngFor="let storageCloudOption of storageclouds; trackBy: trackById">{{ storageCloudOption.id }}</option>
                     </select>
                 </div>
             </div>

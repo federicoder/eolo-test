@@ -1,5 +1,6 @@
 package it.maggioli.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -40,6 +41,14 @@ public class StorageCloud implements Serializable {
 
     @Column(name = "data_cessione")
     private LocalDate dataCessione;
+
+    @OneToOne(mappedBy = "storageCloud")
+    @JsonIgnore
+    private Licenza licenza;
+
+    @OneToOne(mappedBy = "storageCloud")
+    @JsonIgnore
+    private Professionista professionista;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -100,6 +109,32 @@ public class StorageCloud implements Serializable {
 
     public void setDataCessione(LocalDate dataCessione) {
         this.dataCessione = dataCessione;
+    }
+
+    public Licenza getLicenza() {
+        return licenza;
+    }
+
+    public StorageCloud licenza(Licenza licenza) {
+        this.licenza = licenza;
+        return this;
+    }
+
+    public void setLicenza(Licenza licenza) {
+        this.licenza = licenza;
+    }
+
+    public Professionista getProfessionista() {
+        return professionista;
+    }
+
+    public StorageCloud professionista(Professionista professionista) {
+        this.professionista = professionista;
+        return this;
+    }
+
+    public void setProfessionista(Professionista professionista) {
+        this.professionista = professionista;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

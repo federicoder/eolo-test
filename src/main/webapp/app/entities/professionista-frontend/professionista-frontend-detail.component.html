@@ -40,10 +40,10 @@
                 <dd>
                     <span>{{ professionista.idLicenza }}</span>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.professionista.idProfessionista">Id Professionista</span></dt>
+                <dt><span jhiTranslate="eoloTestApp.professionista.storageCloud">Storage Cloud</span></dt>
                 <dd>
-                    <div *ngIf="professionista.idProfessionistaId">
-                        <a [routerLink]="['/storage-cloud-frontend', professionista.idProfessionistaId, 'view']">{{ professionista.idProfessionistaId }}</a>
+                    <div *ngIf="professionista.storageCloudId">
+                        <a [routerLink]="['/storage-cloud-frontend', professionista.storageCloudId, 'view']">{{ professionista.storageCloudId }}</a>
                     </div>
                 </dd>
             </dl>

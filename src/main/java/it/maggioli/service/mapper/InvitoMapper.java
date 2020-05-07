@@ -12,18 +12,18 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {CollaboratoreMapper.class, ClienteMapper.class, PraticaMapper.class, ProfessionistaMapper.class})
 public interface InvitoMapper extends EntityMapper<InvitoDTO, Invito> {
 
-    @Mapping(source = "idUtente.id", target = "idUtenteId")
-    @Mapping(source = "idUtente.id", target = "idUtenteId")
+    @Mapping(source = "collaboratore.id", target = "collaboratoreId")
+    @Mapping(source = "cliente.id", target = "clienteId")
     @Mapping(source = "pratica.id", target = "praticaId")
-    @Mapping(source = "idUtente.id", target = "idUtenteId")
+    @Mapping(source = "professionista.id", target = "professionistaId")
     InvitoDTO toDto(Invito invito);
 
-    @Mapping(source = "idUtenteId", target = "idUtente")
-    @Mapping(source = "idUtenteId", target = "idUtente")
-    @Mapping(target = "idInvitos", ignore = true)
-    @Mapping(target = "removeIdInvito", ignore = true)
+    @Mapping(source = "collaboratoreId", target = "collaboratore")
+    @Mapping(source = "clienteId", target = "cliente")
+    @Mapping(target = "collaboratores", ignore = true)
+    @Mapping(target = "removeCollaboratore", ignore = true)
     @Mapping(source = "praticaId", target = "pratica")
-    @Mapping(source = "idUtenteId", target = "idUtente")
+    @Mapping(source = "professionistaId", target = "professionista")
     @Mapping(target = "idUtentes", ignore = true)
     @Mapping(target = "removeIdUtente", ignore = true)
     @Mapping(target = "idPraticas", ignore = true)

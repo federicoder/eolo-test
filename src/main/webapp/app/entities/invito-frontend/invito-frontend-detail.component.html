@@ -24,16 +24,16 @@
                 <dd>
                     <span>{{ invito.idInvito }}</span>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.invito.idUtente">Id Utente</span></dt>
+                <dt><span jhiTranslate="eoloTestApp.invito.collaboratore">Collaboratore</span></dt>
                 <dd>
-                    <div *ngIf="invito.idUtenteId">
-                        <a [routerLink]="['/collaboratore-frontend', invito.idUtenteId, 'view']">{{ invito.idUtenteId }}</a>
+                    <div *ngIf="invito.collaboratoreId">
+                        <a [routerLink]="['/collaboratore-frontend', invito.collaboratoreId, 'view']">{{ invito.collaboratoreId }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.invito.idUtente">Id Utente</span></dt>
+                <dt><span jhiTranslate="eoloTestApp.invito.cliente">Cliente</span></dt>
                 <dd>
-                    <div *ngIf="invito.idUtenteId">
-                        <a [routerLink]="['/cliente-frontend', invito.idUtenteId, 'view']">{{ invito.idUtenteId }}</a>
+                    <div *ngIf="invito.clienteId">
+                        <a [routerLink]="['/cliente-frontend', invito.clienteId, 'view']">{{ invito.clienteId }}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="eoloTestApp.invito.pratica">Pratica</span></dt>
@@ -42,10 +42,10 @@
                         <a [routerLink]="['/pratica-frontend', invito.praticaId, 'view']">{{ invito.praticaId }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.invito.idUtente">Id Utente</span></dt>
+                <dt><span jhiTranslate="eoloTestApp.invito.professionista">Professionista</span></dt>
                 <dd>
-                    <div *ngIf="invito.idUtenteId">
-                        <a [routerLink]="['/professionista-frontend', invito.idUtenteId, 'view']">{{ invito.idUtenteId }}</a>
+                    <div *ngIf="invito.professionistaId">
+                        <a [routerLink]="['/professionista-frontend', invito.professionistaId, 'view']">{{ invito.professionistaId }}</a>
                     </div>
                 </dd>
             </dl>

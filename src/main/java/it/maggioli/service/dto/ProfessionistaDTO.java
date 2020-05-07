@@ -30,7 +30,7 @@ public class ProfessionistaDTO implements Serializable {
     private Integer idLicenza;
 
 
-    private Long idProfessionistaId;
+    private Long storageCloudId;
     
     public Long getId() {
         return id;
@@ -104,12 +104,12 @@ public class ProfessionistaDTO implements Serializable {
         this.idLicenza = idLicenza;
     }
 
-    public Long getIdProfessionistaId() {
-        return idProfessionistaId;
+    public Long getStorageCloudId() {
+        return storageCloudId;
     }
 
-    public void setIdProfessionistaId(Long storageCloudId) {
-        this.idProfessionistaId = storageCloudId;
+    public void setStorageCloudId(Long storageCloudId) {
+        this.storageCloudId = storageCloudId;
     }
 
     @Override
@@ -145,7 +145,7 @@ public class ProfessionistaDTO implements Serializable {
             ", pIva='" + getpIva() + "'" +
             ", studioAssociato='" + getStudioAssociato() + "'" +
             ", idLicenza=" + getIdLicenza() +
-            ", idProfessionistaId=" + getIdProfessionistaId() +
+            ", storageCloudId=" + getStorageCloudId() +
             "}";
     }
 }

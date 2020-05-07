@@ -14,7 +14,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import static org.elasticsearch.index.query.QueryBuilders.*;
 
@@ -67,6 +71,21 @@ public class ProfessionistaServiceImpl implements ProfessionistaService {
         log.debug("Request to get all Professionistas");
         return professionistaRepository.findAll(pageable)
             .map(professionistaMapper::toDto);
+    }
+
+
+    /**
+     *  Get all the professionistas where Licenza is {@code null}.
+     *  @return the list of entities.
+     */
+    @Transactional(readOnly = true) 
+    public List<ProfessionistaDTO> findAllWhereLicenzaIsNull() {
+        log.debug("Request to get all professionistas where Licenza is null");
+        return StreamSupport
+            .stream(professionistaRepository.findAll().spliterator(), false)
+            .filter(professionista -> professionista.getLicenza() == null)
+            .map(professionistaMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     /**

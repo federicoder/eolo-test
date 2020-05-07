@@ -17,7 +17,7 @@ import { StorageCloudFrontendService } from 'app/entities/storage-cloud-frontend
 })
 export class ProfessionistaFrontendUpdateComponent implements OnInit {
   isSaving = false;
-  idprofessionistas: IStorageCloudFrontend[] = [];
+  storageclouds: IStorageCloudFrontend[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -29,7 +29,7 @@ export class ProfessionistaFrontendUpdateComponent implements OnInit {
     pIva: [],
     studioAssociato: [],
     idLicenza: [],
-    idProfessionistaId: []
+    storageCloudId: []
   });
 
   constructor(
@@ -51,17 +51,17 @@ export class ProfessionistaFrontendUpdateComponent implements OnInit {
           })
         )
         .subscribe((resBody: IStorageCloudFrontend[]) => {
-          if (!professionista.idProfessionistaId) {
-            this.idprofessionistas = resBody;
+          if (!professionista.storageCloudId) {
+            this.storageclouds = resBody;
           } else {
             this.storageCloudService
-              .find(professionista.idProfessionistaId)
+              .find(professionista.storageCloudId)
               .pipe(
                 map((subRes: HttpResponse<IStorageCloudFrontend>) => {
                   return subRes.body ? [subRes.body].concat(resBody) : resBody;
                 })
               )
-              .subscribe((concatRes: IStorageCloudFrontend[]) => (this.idprofessionistas = concatRes));
+              .subscribe((concatRes: IStorageCloudFrontend[]) => (this.storageclouds = concatRes));
           }
         });
     });
@@ -78,7 +78,7 @@ export class ProfessionistaFrontendUpdateComponent implements OnInit {
       pIva: professionista.pIva,
       studioAssociato: professionista.studioAssociato,
       idLicenza: professionista.idLicenza,
-      idProfessionistaId: professionista.idProfessionistaId
+      storageCloudId: professionista.storageCloudId
     });
   }
 
@@ -108,7 +108,7 @@ export class ProfessionistaFrontendUpdateComponent implements OnInit {
       pIva: this.editForm.get(['pIva'])!.value,
       studioAssociato: this.editForm.get(['studioAssociato'])!.value,
       idLicenza: this.editForm.get(['idLicenza'])!.value,
-      idProfessionistaId: this.editForm.get(['idProfessionistaId'])!.value
+      storageCloudId: this.editForm.get(['storageCloudId'])!.value
     };
   }
 

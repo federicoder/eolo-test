@@ -45,15 +45,22 @@
             "relationshipType": "one-to-one",
             "otherEntityName": "storageCloud",
             "otherEntityRelationshipName": "professionista",
-            "relationshipName": "idProfessionista",
+            "relationshipName": "storageCloud",
             "otherEntityField": "id",
             "ownerSide": true
         },
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "invito",
-            "otherEntityRelationshipName": "idUtente",
-            "relationshipName": "idProfessionista"
+            "otherEntityRelationshipName": "professionista",
+            "relationshipName": "invito"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "licenza",
+            "otherEntityRelationshipName": "professionista",
+            "relationshipName": "licenza",
+            "ownerSide": false
         }
     ],
     "changelogDate": "20200506144600",

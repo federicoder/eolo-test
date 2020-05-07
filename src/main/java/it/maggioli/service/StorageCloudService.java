@@ -24,6 +24,18 @@ public interface StorageCloudService {
      * @return the list of entities.
      */
     List<StorageCloudDTO> findAll();
+    /**
+     * Get all the StorageCloudDTO where Licenza is {@code null}.
+     *
+     * @return the list of entities.
+     */
+    List<StorageCloudDTO> findAllWhereLicenzaIsNull();
+    /**
+     * Get all the StorageCloudDTO where Professionista is {@code null}.
+     *
+     * @return the list of entities.
+     */
+    List<StorageCloudDTO> findAllWhereProfessionistaIsNull();
 
     /**
      * Get the "id" storageCloud.

@@ -14,6 +14,8 @@ public interface ClienteMapper extends EntityMapper<ClienteDTO, Cliente> {
 
 
     @Mapping(target = "removeIdCliente", ignore = true)
+    @Mapping(target = "invito", ignore = true)
+    Cliente toEntity(ClienteDTO clienteDTO);
 
     default Cliente fromId(Long id) {
         if (id == null) {

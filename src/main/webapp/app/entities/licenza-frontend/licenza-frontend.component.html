@@ -45,8 +45,8 @@
                     <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.tipologia">Tipologia</span></th>
                     <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.descrizione">Descrizione</span></th>
                     <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.dataScadenza">Data Scadenza</span></th>
-                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></th>
-                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.professionista">Professionista</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.licenza.storageCloud">Storage Cloud</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -58,13 +58,13 @@
                     <td>{{ licenza.descrizione }}</td>
                     <td>{{ licenza.dataScadenza | date:'mediumDate' }}</td>
                     <td>
-                        <div *ngIf="licenza.idLicenzaId">
-                            <a [routerLink]="['/professionista-frontend', licenza.idLicenzaId , 'view']" >{{ licenza.idLicenzaId }}</a>
+                        <div *ngIf="licenza.professionistaId">
+                            <a [routerLink]="['/professionista-frontend', licenza.professionistaId , 'view']" >{{ licenza.professionistaId }}</a>
                         </div>
                     </td>
                     <td>
-                        <div *ngIf="licenza.idLicenzaId">
-                            <a [routerLink]="['/storage-cloud-frontend', licenza.idLicenzaId , 'view']" >{{ licenza.idLicenzaId }}</a>
+                        <div *ngIf="licenza.storageCloudId">
+                            <a [routerLink]="['/storage-cloud-frontend', licenza.storageCloudId , 'view']" >{{ licenza.storageCloudId }}</a>
                         </div>
                     </td>
                     <td class="text-right">

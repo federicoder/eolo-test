@@ -26,7 +26,7 @@
             "relationshipType": "one-to-one",
             "otherEntityName": "professionista",
             "otherEntityRelationshipName": "licenza",
-            "relationshipName": "idLicenza",
+            "relationshipName": "professionista",
             "otherEntityField": "id",
             "ownerSide": true
         },
@@ -34,7 +34,7 @@
             "relationshipType": "one-to-one",
             "otherEntityName": "storageCloud",
             "otherEntityRelationshipName": "licenza",
-            "relationshipName": "idLicenza",
+            "relationshipName": "storageCloud",
             "otherEntityField": "id",
             "ownerSide": true
         },
@@ -42,7 +42,7 @@
             "relationshipType": "one-to-many",
             "otherEntityName": "pratica",
             "otherEntityRelationshipName": "licenza",
-            "relationshipName": "idLicenza"
+            "relationshipName": "pratica"
         }
     ],
     "changelogDate": "20200506144700",
