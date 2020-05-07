@@ -1,57 +1,57 @@
 
 entity Professionista{
-	idProfessionista Integer required,
-    nome String,
-    cognome String,
-    tipologia String,
-    codiceFiscale String required,
-    pIva String,
-    studioAssociato String,
+	idProfessionista Integer required
+    nome String
+    cognome String
+    tipologia String
+    codiceFiscale String required
+    pIva String
+    studioAssociato String
     idLicenza Integer 
 }
 
 entity Licenza {
-	idLicenza Integer required,
-	tipologia String,
-	descrizione String,
+	idLicenza Integer required
+	tipologia String
+	descrizione String
     dataScadenza LocalDate
     
 }
 
 entity Pratica {
-	idPratica Integer required,
-    idLic Integer required,
-    tdp Integer required,
-    idCollab Integer,
+	idPratica Integer required
+    idLic Integer required
+    tdp Integer required
+    idCollab Integer
     idClient Integer required
 }
 
 entity Collaboratore{
-	idCollaboratore Integer required,
-    nome String,
-    cognome String,
-    tipologia String,
-    idPratic Integer required,
+	idCollaboratore Integer required
+    nome String
+    cognome String
+    tipologia String
+    idPratic Integer required
     idInvito Integer
 }
 
 entity Cliente {
-	idCliente Integer required,
-    nome String,
-    cognome String,
+	idCliente Integer required
+    nome String
+    cognome String
     idPraticaConnessa Integer required
 }
 entity Invito {
-	utenteIscritto Boolean,
-    idUtente Integer,
-    idPratica Integer,
+	utenteIscritto Boolean
+    idUtente Integer
+    idPratica Integer
     idInvito Integer required
 }
 
 entity StorageCloud{
-	idUtente Integer required,
-    idLicenza Integer required,
-    pianoBase String,
+	idUtente Integer required
+    idLicenza Integer required
+    pianoBase String
     dataCessione LocalDate 
 }
 
@@ -89,4 +89,4 @@ dto * with mapstruct
 service all with serviceImpl except Cliente, Collaboratore
 
 // Set an angular suffix
- angularSuffix * with frontend
+ //angularSuffix * with frontend
