@@ -27,7 +27,7 @@ export class CollaboratoreFrontendUpdateComponent implements OnInit {
     idPratic: [null, [Validators.required]],
     idInvito: [],
     idCollaboratores: [],
-    idInvitoId: []
+    invitoId: []
   });
 
   constructor(
@@ -55,7 +55,7 @@ export class CollaboratoreFrontendUpdateComponent implements OnInit {
       idPratic: collaboratore.idPratic,
       idInvito: collaboratore.idInvito,
       idCollaboratores: collaboratore.idCollaboratores,
-      idInvitoId: collaboratore.idInvitoId
+      invitoId: collaboratore.invitoId
     });
   }
 
@@ -84,7 +84,7 @@ export class CollaboratoreFrontendUpdateComponent implements OnInit {
       idPratic: this.editForm.get(['idPratic'])!.value,
       idInvito: this.editForm.get(['idInvito'])!.value,
       idCollaboratores: this.editForm.get(['idCollaboratores'])!.value,
-      idInvitoId: this.editForm.get(['idInvitoId'])!.value
+      invitoId: this.editForm.get(['invitoId'])!.value
     };
   }
 

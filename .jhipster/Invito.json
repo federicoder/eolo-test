@@ -33,7 +33,7 @@
         {
             "relationshipType": "one-to-one",
             "otherEntityName": "cliente",
-            "otherEntityRelationshipName": "idUtente",
+            "otherEntityRelationshipName": "invito",
             "relationshipName": "idUtente",
             "otherEntityField": "id",
             "ownerSide": true
@@ -41,14 +41,14 @@
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "collaboratore",
-            "otherEntityRelationshipName": "idInvito",
+            "otherEntityRelationshipName": "invito",
             "relationshipName": "idInvito"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "pratica",
             "otherEntityRelationshipName": "idPratica",
-            "relationshipName": "idPratica",
+            "relationshipName": "pratica",
             "otherEntityField": "id"
         },
         {

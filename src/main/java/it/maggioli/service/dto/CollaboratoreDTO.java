@@ -29,7 +29,7 @@ public class CollaboratoreDTO implements Serializable {
 
     private Set<InvitoDTO> idCollaboratores = new HashSet<>();
 
-    private Long idInvitoId;
+    private Long invitoId;
     
     public Long getId() {
         return id;
@@ -95,12 +95,12 @@ public class CollaboratoreDTO implements Serializable {
         this.idCollaboratores = invitos;
     }
 
-    public Long getIdInvitoId() {
-        return idInvitoId;
+    public Long getInvitoId() {
+        return invitoId;
     }
 
-    public void setIdInvitoId(Long invitoId) {
-        this.idInvitoId = invitoId;
+    public void setInvitoId(Long invitoId) {
+        this.invitoId = invitoId;
     }
 
     @Override
@@ -135,7 +135,7 @@ public class CollaboratoreDTO implements Serializable {
             ", idPratic=" + getIdPratic() +
             ", idInvito=" + getIdInvito() +
             ", idCollaboratores='" + getIdCollaboratores() + "'" +
-            ", idInvitoId=" + getIdInvitoId() +
+            ", invitoId=" + getInvitoId() +
             "}";
     }
 }

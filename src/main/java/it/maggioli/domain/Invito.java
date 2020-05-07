@@ -51,13 +51,13 @@ public class Invito implements Serializable {
     @JoinColumn(unique = true)
     private Cliente idUtente;
 
-    @OneToMany(mappedBy = "idInvito")
+    @OneToMany(mappedBy = "invito")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Collaboratore> idInvitos = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("idPraticas")
-    private Pratica idPratica;
+    private Pratica pratica;
 
     @ManyToOne
     @JsonIgnoreProperties("idProfessionistas")
@@ -171,13 +171,13 @@ public class Invito implements Serializable {
 
     public Invito addIdInvito(Collaboratore collaboratore) {
         this.idInvitos.add(collaboratore);
-        collaboratore.setIdInvito(this);
+        collaboratore.setInvito(this);
         return this;
     }
 
     public Invito removeIdInvito(Collaboratore collaboratore) {
         this.idInvitos.remove(collaboratore);
-        collaboratore.setIdInvito(null);
+        collaboratore.setInvito(null);
         return this;
     }
 
@@ -185,17 +185,17 @@ public class Invito implements Serializable {
         this.idInvitos = collaboratores;
     }
 
-    public Pratica getIdPratica() {
-        return idPratica;
+    public Pratica getPratica() {
+        return pratica;
     }
 
-    public Invito idPratica(Pratica pratica) {
-        this.idPratica = pratica;
+    public Invito pratica(Pratica pratica) {
+        this.pratica = pratica;
         return this;
     }
 
-    public void setIdPratica(Pratica pratica) {
-        this.idPratica = pratica;
+    public void setPratica(Pratica pratica) {
+        this.pratica = pratica;
     }
 
     public Professionista getIdUtente() {

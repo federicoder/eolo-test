@@ -13,11 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import static org.elasticsearch.index.query.QueryBuilders.*;
 
@@ -77,21 +73,6 @@ public class ClienteService {
      */
     public Page<ClienteDTO> findAllWithEagerRelationships(Pageable pageable) {
         return clienteRepository.findAllWithEagerRelationships(pageable).map(clienteMapper::toDto);
-    }
-
-
-    /**
-     *  Get all the clientes where IdUtente is {@code null}.
-     *  @return the list of entities.
-     */
-    @Transactional(readOnly = true) 
-    public List<ClienteDTO> findAllWhereIdUtenteIsNull() {
-        log.debug("Request to get all clientes where IdUtente is null");
-        return StreamSupport
-            .stream(clienteRepository.findAll().spliterator(), false)
-            .filter(cliente -> cliente.getIdUtente() == null)
-            .map(clienteMapper::toDto)
-            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     /**

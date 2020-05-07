@@ -48,13 +48,13 @@ public class Pratica implements Serializable {
     @Column(name = "id_client", nullable = false)
     private Integer idClient;
 
-    @OneToMany(mappedBy = "idPratica")
+    @OneToMany(mappedBy = "pratica")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Invito> idPraticas = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("idLicenzas")
-    private Licenza idLic;
+    private Licenza licenza;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -141,13 +141,13 @@ public class Pratica implements Serializable {
 
     public Pratica addIdPratica(Invito invito) {
         this.idPraticas.add(invito);
-        invito.setIdPratica(this);
+        invito.setPratica(this);
         return this;
     }
 
     public Pratica removeIdPratica(Invito invito) {
         this.idPraticas.remove(invito);
-        invito.setIdPratica(null);
+        invito.setPratica(null);
         return this;
     }
 
@@ -155,17 +155,17 @@ public class Pratica implements Serializable {
         this.idPraticas = invitos;
     }
 
-    public Licenza getIdLic() {
-        return idLic;
+    public Licenza getLicenza() {
+        return licenza;
     }
 
-    public Pratica idLic(Licenza licenza) {
-        this.idLic = licenza;
+    public Pratica licenza(Licenza licenza) {
+        this.licenza = licenza;
         return this;
     }
 
-    public void setIdLic(Licenza licenza) {
-        this.idLic = licenza;
+    public void setLicenza(Licenza licenza) {
+        this.licenza = licenza;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -20,9 +20,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="cliente"/>
 
-        <addForeignKeyConstraint baseColumnNames="id_pratica_id"
+        <addForeignKeyConstraint baseColumnNames="pratica_id"
                                  baseTableName="invito"
-                                 constraintName="fk_invito_id_pratica_id"
+                                 constraintName="fk_invito_pratica_id"
                                  referencedColumnNames="id"
                                  referencedTableName="pratica"/>
 

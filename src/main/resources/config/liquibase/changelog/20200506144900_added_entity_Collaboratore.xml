@@ -33,7 +33,7 @@
             <column name="id_invito" type="integer">
                 <constraints nullable="true" />
             </column>
-            <column name="id_invito_id" type="bigint">
+            <column name="invito_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->

@@ -14,7 +14,7 @@ public interface InvitoMapper extends EntityMapper<InvitoDTO, Invito> {
 
     @Mapping(source = "idUtente.id", target = "idUtenteId")
     @Mapping(source = "idUtente.id", target = "idUtenteId")
-    @Mapping(source = "idPratica.id", target = "idPraticaId")
+    @Mapping(source = "pratica.id", target = "praticaId")
     @Mapping(source = "idUtente.id", target = "idUtenteId")
     InvitoDTO toDto(Invito invito);
 
@@ -22,7 +22,7 @@ public interface InvitoMapper extends EntityMapper<InvitoDTO, Invito> {
     @Mapping(source = "idUtenteId", target = "idUtente")
     @Mapping(target = "idInvitos", ignore = true)
     @Mapping(target = "removeIdInvito", ignore = true)
-    @Mapping(source = "idPraticaId", target = "idPratica")
+    @Mapping(source = "praticaId", target = "pratica")
     @Mapping(source = "idUtenteId", target = "idUtente")
     @Mapping(target = "idUtentes", ignore = true)
     @Mapping(target = "removeIdUtente", ignore = true)

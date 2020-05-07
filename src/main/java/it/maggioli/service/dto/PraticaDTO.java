@@ -26,7 +26,7 @@ public class PraticaDTO implements Serializable {
     private Integer idClient;
 
 
-    private Long idLicId;
+    private Long licenzaId;
     
     public Long getId() {
         return id;
@@ -76,12 +76,12 @@ public class PraticaDTO implements Serializable {
         this.idClient = idClient;
     }
 
-    public Long getIdLicId() {
-        return idLicId;
+    public Long getLicenzaId() {
+        return licenzaId;
     }
 
-    public void setIdLicId(Long licenzaId) {
-        this.idLicId = licenzaId;
+    public void setLicenzaId(Long licenzaId) {
+        this.licenzaId = licenzaId;
     }
 
     @Override
@@ -114,7 +114,7 @@ public class PraticaDTO implements Serializable {
             ", tdp=" + getTdp() +
             ", idCollab=" + getIdCollab() +
             ", idClient=" + getIdClient() +
-            ", idLicId=" + getIdLicId() +
+            ", licenzaId=" + getLicenzaId() +
             "}";
     }
 }

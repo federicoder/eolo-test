@@ -46,7 +46,7 @@
                     <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.tdp">Tdp</span></th>
                     <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.idCollab">Id Collab</span></th>
                     <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.idClient">Id Client</span></th>
-                    <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.idLic">Id Lic</span></th>
+                    <th scope="col" ><span jhiTranslate="eoloTestApp.pratica.licenza">Licenza</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -59,8 +59,8 @@
                     <td>{{ pratica.idCollab }}</td>
                     <td>{{ pratica.idClient }}</td>
                     <td>
-                        <div *ngIf="pratica.idLicId">
-                            <a [routerLink]="['/licenza-frontend', pratica.idLicId , 'view']" >{{ pratica.idLicId }}</a>
+                        <div *ngIf="pratica.licenzaId">
+                            <a [routerLink]="['/licenza-frontend', pratica.licenzaId , 'view']" >{{ pratica.licenzaId }}</a>
                         </div>
                     </td>
                     <td class="text-right">

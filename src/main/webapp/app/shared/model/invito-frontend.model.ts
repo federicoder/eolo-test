@@ -10,7 +10,7 @@ export interface IInvitoFrontend {
   idUtenteId?: number;
   idUtenteId?: number;
   idInvitos?: ICollaboratoreFrontend[];
-  idPraticaId?: number;
+  praticaId?: number;
   idUtenteId?: number;
   idUtentes?: ICollaboratoreFrontend[];
   idPraticas?: IClienteFrontend[];
@@ -26,7 +26,7 @@ export class InvitoFrontend implements IInvitoFrontend {
     public idUtenteId?: number,
     public idUtenteId?: number,
     public idInvitos?: ICollaboratoreFrontend[],
-    public idPraticaId?: number,
+    public praticaId?: number,
     public idUtenteId?: number,
     public idUtentes?: ICollaboratoreFrontend[],
     public idPraticas?: IClienteFrontend[]

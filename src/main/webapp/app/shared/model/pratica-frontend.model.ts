@@ -8,7 +8,7 @@ export interface IPraticaFrontend {
   idCollab?: number;
   idClient?: number;
   idPraticas?: IInvitoFrontend[];
-  idLicId?: number;
+  licenzaId?: number;
 }
 
 export class PraticaFrontend implements IPraticaFrontend {
@@ -20,6 +20,6 @@ export class PraticaFrontend implements IPraticaFrontend {
     public idCollab?: number,
     public idClient?: number,
     public idPraticas?: IInvitoFrontend[],
-    public idLicId?: number
+    public licenzaId?: number
   ) {}
 }
