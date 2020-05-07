@@ -4,6 +4,7 @@ entity Professionista{
     nome String
     cognome String
     tipologia String
+    email String required pattern (/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
     codiceFiscale String required
     pIva String
     studioAssociato String
@@ -67,6 +68,9 @@ relationship OneToOne {
     Professionista to StorageCloud
 }
 
+relationship OneToOne {
+    Customer{user(login) required} to User
+}
 //relationship OneToMany{
 //	Licenza to Pratica,
 //    Pratica to Invito,
