@@ -75,8 +75,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.idInvito" for="field_idInvito">Id Invito</label>
-                    <select class="form-control" id="field_idInvito" name="idInvito" formControlName="idInvitoId">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.invito" for="field_invito">Invito</label>
+                    <select class="form-control" id="field_invito" name="invito" formControlName="invitoId">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="invitoOption.id" *ngFor="let invitoOption of invitos; trackBy: trackById">{{ invitoOption.id }}</option>
                     </select>

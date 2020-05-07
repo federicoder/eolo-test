@@ -33,7 +33,7 @@
             <column name="id_utente_id" type="bigint">
                 <constraints unique="true" nullable="true" uniqueConstraintName="ux_invito_id_utente_id" />
             </column>
-            <column name="id_pratica_id" type="bigint">
+            <column name="pratica_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <column name="id_utente_id" type="bigint">

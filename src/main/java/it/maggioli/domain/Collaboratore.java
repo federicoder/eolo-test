@@ -63,7 +63,7 @@ public class Collaboratore implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("idInvitos")
-    private Invito idInvito;
+    private Invito invito;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -190,17 +190,17 @@ public class Collaboratore implements Serializable {
         this.idCollaboratore = invito;
     }
 
-    public Invito getIdInvito() {
-        return idInvito;
+    public Invito getInvito() {
+        return invito;
     }
 
-    public Collaboratore idInvito(Invito invito) {
-        this.idInvito = invito;
+    public Collaboratore invito(Invito invito) {
+        this.invito = invito;
         return this;
     }
 
-    public void setIdInvito(Invito invito) {
-        this.idInvito = invito;
+    public void setInvito(Invito invito) {
+        this.invito = invito;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

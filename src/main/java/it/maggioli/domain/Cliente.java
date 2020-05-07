@@ -1,6 +1,5 @@
 package it.maggioli.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -49,10 +48,6 @@ public class Cliente implements Serializable {
                joinColumns = @JoinColumn(name = "cliente_id", referencedColumnName = "id"),
                inverseJoinColumns = @JoinColumn(name = "id_cliente_id", referencedColumnName = "id"))
     private Set<Invito> idClientes = new HashSet<>();
-
-    @OneToOne(mappedBy = "idUtente")
-    @JsonIgnore
-    private Invito idUtente;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -138,19 +133,6 @@ public class Cliente implements Serializable {
 
     public void setIdClientes(Set<Invito> invitos) {
         this.idClientes = invitos;
-    }
-
-    public Invito getIdUtente() {
-        return idUtente;
-    }
-
-    public Cliente idUtente(Invito invito) {
-        this.idUtente = invito;
-        return this;
-    }
-
-    public void setIdUtente(Invito invito) {
-        this.idUtente = invito;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

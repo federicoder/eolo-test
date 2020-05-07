@@ -50,7 +50,7 @@ public class Licenza implements Serializable {
     @JoinColumn(unique = true)
     private StorageCloud idLicenza;
 
-    @OneToMany(mappedBy = "idLic")
+    @OneToMany(mappedBy = "licenza")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Pratica> idLicenzas = new HashSet<>();
 
@@ -152,13 +152,13 @@ public class Licenza implements Serializable {
 
     public Licenza addIdLicenza(Pratica pratica) {
         this.idLicenzas.add(pratica);
-        pratica.setIdLic(this);
+        pratica.setLicenza(this);
         return this;
     }
 
     public Licenza removeIdLicenza(Pratica pratica) {
         this.idLicenzas.remove(pratica);
-        pratica.setIdLic(null);
+        pratica.setLicenza(null);
         return this;
     }
 

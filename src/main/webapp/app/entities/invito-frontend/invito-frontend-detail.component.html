@@ -36,10 +36,10 @@
                         <a [routerLink]="['/cliente-frontend', invito.idUtenteId, 'view']">{{ invito.idUtenteId }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.invito.idPratica">Id Pratica</span></dt>
+                <dt><span jhiTranslate="eoloTestApp.invito.pratica">Pratica</span></dt>
                 <dd>
-                    <div *ngIf="invito.idPraticaId">
-                        <a [routerLink]="['/pratica-frontend', invito.idPraticaId, 'view']">{{ invito.idPraticaId }}</a>
+                    <div *ngIf="invito.praticaId">
+                        <a [routerLink]="['/pratica-frontend', invito.praticaId, 'view']">{{ invito.praticaId }}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="eoloTestApp.invito.idUtente">Id Utente</span></dt>

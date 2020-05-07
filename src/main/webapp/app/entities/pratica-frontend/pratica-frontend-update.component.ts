@@ -25,7 +25,7 @@ export class PraticaFrontendUpdateComponent implements OnInit {
     tdp: [null, [Validators.required]],
     idCollab: [],
     idClient: [null, [Validators.required]],
-    idLicId: []
+    licenzaId: []
   });
 
   constructor(
@@ -51,7 +51,7 @@ export class PraticaFrontendUpdateComponent implements OnInit {
       tdp: pratica.tdp,
       idCollab: pratica.idCollab,
       idClient: pratica.idClient,
-      idLicId: pratica.idLicId
+      licenzaId: pratica.licenzaId
     });
   }
 
@@ -78,7 +78,7 @@ export class PraticaFrontendUpdateComponent implements OnInit {
       tdp: this.editForm.get(['tdp'])!.value,
       idCollab: this.editForm.get(['idCollab'])!.value,
       idClient: this.editForm.get(['idClient'])!.value,
-      idLicId: this.editForm.get(['idLicId'])!.value
+      licenzaId: this.editForm.get(['licenzaId'])!.value
     };
   }
 

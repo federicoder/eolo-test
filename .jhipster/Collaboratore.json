@@ -52,7 +52,7 @@
             "relationshipType": "many-to-one",
             "otherEntityName": "invito",
             "otherEntityRelationshipName": "idInvito",
-            "relationshipName": "idInvito",
+            "relationshipName": "invito",
             "otherEntityField": "id"
         }
     ],

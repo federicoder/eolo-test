@@ -47,7 +47,7 @@
                     <th scope="col"  jhiSortBy="tipologia"><span jhiTranslate="eoloTestApp.collaboratore.tipologia">Tipologia</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="idPratic"><span jhiTranslate="eoloTestApp.collaboratore.idPratic">Id Pratic</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="idInvito"><span jhiTranslate="eoloTestApp.collaboratore.idInvito">Id Invito</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="idInvitoId"><span jhiTranslate="eoloTestApp.collaboratore.idInvito">Id Invito</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="invitoId"><span jhiTranslate="eoloTestApp.collaboratore.invito">Invito</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -61,8 +61,8 @@
                     <td>{{ collaboratore.idPratic }}</td>
                     <td>{{ collaboratore.idInvito }}</td>
                     <td>
-                        <div *ngIf="collaboratore.idInvitoId">
-                            <a [routerLink]="['/invito-frontend', collaboratore.idInvitoId , 'view']" >{{ collaboratore.idInvitoId }}</a>
+                        <div *ngIf="collaboratore.invitoId">
+                            <a [routerLink]="['/invito-frontend', collaboratore.invitoId , 'view']" >{{ collaboratore.invitoId }}</a>
                         </div>
                     </td>
                     <td class="text-right">

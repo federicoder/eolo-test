@@ -20,9 +20,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="invito"/>
         
-        <addForeignKeyConstraint baseColumnNames="id_invito_id"
+        <addForeignKeyConstraint baseColumnNames="invito_id"
                                  baseTableName="collaboratore"
-                                 constraintName="fk_collaboratore_id_invito_id"
+                                 constraintName="fk_collaboratore_invito_id"
                                  referencedColumnNames="id"
                                  referencedTableName="invito"/>
 

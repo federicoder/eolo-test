@@ -38,14 +38,14 @@
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "invito",
-            "otherEntityRelationshipName": "idPratica",
+            "otherEntityRelationshipName": "pratica",
             "relationshipName": "idPratica"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "licenza",
             "otherEntityRelationshipName": "idLicenza",
-            "relationshipName": "idLic",
+            "relationshipName": "licenza",
             "otherEntityField": "id"
         }
     ],

@@ -32,13 +32,6 @@
             "relationshipName": "idCliente",
             "otherEntityField": "id",
             "ownerSide": true
-        },
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "invito",
-            "otherEntityRelationshipName": "idUtente",
-            "relationshipName": "idUtente",
-            "ownerSide": false
         }
     ],
     "changelogDate": "20200506145000",

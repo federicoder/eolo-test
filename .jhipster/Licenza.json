@@ -41,7 +41,7 @@
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "pratica",
-            "otherEntityRelationshipName": "idLic",
+            "otherEntityRelationshipName": "licenza",
             "relationshipName": "idLicenza"
         }
     ],

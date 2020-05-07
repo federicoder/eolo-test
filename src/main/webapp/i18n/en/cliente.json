@@ -21,8 +21,7 @@
       "nome": "Nome",
       "cognome": "Cognome",
       "idPraticaConnessa": "Id Pratica Connessa",
-      "idCliente": "Id Cliente",
-      "idUtente": "Id Utente"
+      "idCliente": "Id Cliente"
     }
   }
 }

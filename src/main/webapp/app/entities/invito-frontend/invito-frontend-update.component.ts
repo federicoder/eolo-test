@@ -38,7 +38,7 @@ export class InvitoFrontendUpdateComponent implements OnInit {
     idInvito: [null, [Validators.required]],
     idUtenteId: [],
     idUtenteId: [],
-    idPraticaId: [],
+    praticaId: [],
     idUtenteId: []
   });
 
@@ -79,7 +79,7 @@ export class InvitoFrontendUpdateComponent implements OnInit {
         });
 
       this.clienteService
-        .query({ filter: 'idutente-is-null' })
+        .query({ filter: 'invito-is-null' })
         .pipe(
           map((res: HttpResponse<IClienteFrontend[]>) => {
             return res.body || [];
@@ -117,7 +117,7 @@ export class InvitoFrontendUpdateComponent implements OnInit {
       idInvito: invito.idInvito,
       idUtenteId: invito.idUtenteId,
       idUtenteId: invito.idUtenteId,
-      idPraticaId: invito.idPraticaId,
+      praticaId: invito.praticaId,
       idUtenteId: invito.idUtenteId
     });
   }
@@ -146,7 +146,7 @@ export class InvitoFrontendUpdateComponent implements OnInit {
       idInvito: this.editForm.get(['idInvito'])!.value,
       idUtenteId: this.editForm.get(['idUtenteId'])!.value,
       idUtenteId: this.editForm.get(['idUtenteId'])!.value,
-      idPraticaId: this.editForm.get(['idPraticaId'])!.value,
+      praticaId: this.editForm.get(['praticaId'])!.value,
       idUtenteId: this.editForm.get(['idUtenteId'])!.value
     };
   }
