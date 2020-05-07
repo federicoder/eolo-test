@@ -7,7 +7,7 @@ export interface IPraticaFrontend {
   tdp?: number;
   idCollab?: number;
   idClient?: number;
-  idPraticas?: IInvitoFrontend[];
+  invitos?: IInvitoFrontend[];
   licenzaId?: number;
 }
 
@@ -19,7 +19,7 @@ export class PraticaFrontend implements IPraticaFrontend {
     public tdp?: number,
     public idCollab?: number,
     public idClient?: number,
-    public idPraticas?: IInvitoFrontend[],
+    public invitos?: IInvitoFrontend[],
     public licenzaId?: number
   ) {}
 }

@@ -91,10 +91,16 @@ public class ProfessionistaResource {
      * {@code GET  /professionistas} : get all the professionistas.
      *
      * @param pageable the pagination information.
+     * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of professionistas in body.
      */
     @GetMapping("/professionistas")
-    public ResponseEntity<List<ProfessionistaDTO>> getAllProfessionistas(Pageable pageable) {
+    public ResponseEntity<List<ProfessionistaDTO>> getAllProfessionistas(Pageable pageable, @RequestParam(required = false) String filter) {
+        if ("licenza-is-null".equals(filter)) {
+            log.debug("REST request to get all Professionistas where licenza is null");
+            return new ResponseEntity<>(professionistaService.findAllWhereLicenzaIsNull(),
+                    HttpStatus.OK);
+        }
         log.debug("REST request to get a page of Professionistas");
         Page<ProfessionistaDTO> page = professionistaService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);

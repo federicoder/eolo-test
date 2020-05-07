@@ -49,7 +49,7 @@
                     <th scope="col"  jhiSortBy="pIva"><span jhiTranslate="eoloTestApp.professionista.pIva">P Iva</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="studioAssociato"><span jhiTranslate="eoloTestApp.professionista.studioAssociato">Studio Associato</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="idLicenza"><span jhiTranslate="eoloTestApp.professionista.idLicenza">Id Licenza</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="idProfessionistaId"><span jhiTranslate="eoloTestApp.professionista.idProfessionista">Id Professionista</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="storageCloudId"><span jhiTranslate="eoloTestApp.professionista.storageCloud">Storage Cloud</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -65,8 +65,8 @@
                     <td>{{ professionista.studioAssociato }}</td>
                     <td>{{ professionista.idLicenza }}</td>
                     <td>
-                        <div *ngIf="professionista.idProfessionistaId">
-                            <a [routerLink]="['/storage-cloud-frontend', professionista.idProfessionistaId , 'view']" >{{ professionista.idProfessionistaId }}</a>
+                        <div *ngIf="professionista.storageCloudId">
+                            <a [routerLink]="['/storage-cloud-frontend', professionista.storageCloudId , 'view']" >{{ professionista.storageCloudId }}</a>
                         </div>
                     </td>
                     <td class="text-right">

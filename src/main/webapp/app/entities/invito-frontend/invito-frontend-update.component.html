@@ -46,18 +46,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.invito.idUtente" for="field_idUtente">Id Utente</label>
-                    <select class="form-control" id="field_idUtente" name="idUtente" formControlName="idUtenteId">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.invito.collaboratore" for="field_collaboratore">Collaboratore</label>
+                    <select class="form-control" id="field_collaboratore" name="collaboratore" formControlName="collaboratoreId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="collaboratoreOption.id" *ngFor="let collaboratoreOption of idutentes; trackBy: trackById">{{ collaboratoreOption.id }}</option>
+                        <option [ngValue]="collaboratoreOption.id" *ngFor="let collaboratoreOption of collaboratores; trackBy: trackById">{{ collaboratoreOption.id }}</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.invito.idUtente" for="field_idUtente">Id Utente</label>
-                    <select class="form-control" id="field_idUtente" name="idUtente" formControlName="idUtenteId">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.invito.cliente" for="field_cliente">Cliente</label>
+                    <select class="form-control" id="field_cliente" name="cliente" formControlName="clienteId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="clienteOption.id" *ngFor="let clienteOption of idutentes; trackBy: trackById">{{ clienteOption.id }}</option>
+                        <option [ngValue]="clienteOption.id" *ngFor="let clienteOption of clientes; trackBy: trackById">{{ clienteOption.id }}</option>
                     </select>
                 </div>
 
@@ -70,8 +70,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.invito.idUtente" for="field_idUtente">Id Utente</label>
-                    <select class="form-control" id="field_idUtente" name="idUtente" formControlName="idUtenteId">
+                    <label class="form-control-label" jhiTranslate="eoloTestApp.invito.professionista" for="field_professionista">Professionista</label>
+                    <select class="form-control" id="field_professionista" name="professionista" formControlName="professionistaId">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="professionistaOption.id" *ngFor="let professionistaOption of professionistas; trackBy: trackById">{{ professionistaOption.id }}</option>
                     </select>

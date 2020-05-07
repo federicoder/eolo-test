@@ -10,8 +10,9 @@ export interface IProfessionistaFrontend {
   pIva?: string;
   studioAssociato?: string;
   idLicenza?: number;
-  idProfessionistaId?: number;
-  idProfessionistas?: IInvitoFrontend[];
+  storageCloudId?: number;
+  invitos?: IInvitoFrontend[];
+  licenzaId?: number;
 }
 
 export class ProfessionistaFrontend implements IProfessionistaFrontend {
@@ -25,7 +26,8 @@ export class ProfessionistaFrontend implements IProfessionistaFrontend {
     public pIva?: string,
     public studioAssociato?: string,
     public idLicenza?: number,
-    public idProfessionistaId?: number,
-    public idProfessionistas?: IInvitoFrontend[]
+    public storageCloudId?: number,
+    public invitos?: IInvitoFrontend[],
+    public licenzaId?: number
   ) {}
 }

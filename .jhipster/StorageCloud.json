@@ -24,7 +24,22 @@
             "fieldType": "LocalDate"
         }
     ],
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "licenza",
+            "otherEntityRelationshipName": "storageCloud",
+            "relationshipName": "licenza",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "professionista",
+            "otherEntityRelationshipName": "storageCloud",
+            "relationshipName": "professionista",
+            "ownerSide": false
+        }
+    ],
     "changelogDate": "20200506145200",
     "entityTableName": "storage_cloud",
     "dto": "mapstruct",

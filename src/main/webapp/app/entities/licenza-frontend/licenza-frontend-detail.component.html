@@ -24,16 +24,16 @@
                 <dd>
                     <span>{{ licenza.dataScadenza }}</span>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></dt>
+                <dt><span jhiTranslate="eoloTestApp.licenza.professionista">Professionista</span></dt>
                 <dd>
-                    <div *ngIf="licenza.idLicenzaId">
-                        <a [routerLink]="['/professionista-frontend', licenza.idLicenzaId, 'view']">{{ licenza.idLicenzaId }}</a>
+                    <div *ngIf="licenza.professionistaId">
+                        <a [routerLink]="['/professionista-frontend', licenza.professionistaId, 'view']">{{ licenza.professionistaId }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.licenza.idLicenza">Id Licenza</span></dt>
+                <dt><span jhiTranslate="eoloTestApp.licenza.storageCloud">Storage Cloud</span></dt>
                 <dd>
-                    <div *ngIf="licenza.idLicenzaId">
-                        <a [routerLink]="['/storage-cloud-frontend', licenza.idLicenzaId, 'view']">{{ licenza.idLicenzaId }}</a>
+                    <div *ngIf="licenza.storageCloudId">
+                        <a [routerLink]="['/storage-cloud-frontend', licenza.storageCloudId, 'view']">{{ licenza.storageCloudId }}</a>
                     </div>
                 </dd>
             </dl>
