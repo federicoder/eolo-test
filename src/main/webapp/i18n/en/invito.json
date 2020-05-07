@@ -22,12 +22,7 @@
       "idPratica": "Id Pratica",
       "idInvito": "Id Invito",
       "collaboratore": "Collaboratore",
-      "cliente": "Cliente",
-      "collaboratore": "Collaboratore",
-      "pratica": "Pratica",
-      "professionista": "Professionista",
-      "idUtente": "Id Utente",
-      "idPratica": "Id Pratica"
+      "cliente": "Cliente"
     }
   }
 }

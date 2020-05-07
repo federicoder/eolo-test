@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 
 import { ICollaboratoreFrontend, CollaboratoreFrontend } from 'app/shared/model/collaboratore-frontend.model';
 import { CollaboratoreFrontendService } from './collaboratore-frontend.service';
-import { IInvitoFrontend } from 'app/shared/model/invito-frontend.model';
-import { InvitoFrontendService } from 'app/entities/invito-frontend/invito-frontend.service';
 
 @Component({
   selector: 'jhi-collaboratore-frontend-update',
@@ -16,7 +14,6 @@ import { InvitoFrontendService } from 'app/entities/invito-frontend/invito-front
 })
 export class CollaboratoreFrontendUpdateComponent implements OnInit {
   isSaving = false;
-  invitos: IInvitoFrontend[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -25,14 +22,11 @@ export class CollaboratoreFrontendUpdateComponent implements OnInit {
     cognome: [],
     tipologia: [],
     idPratic: [null, [Validators.required]],
-    idInvito: [],
-    idCollaboratores: [],
-    invitoId: []
+    idInvito: []
   });
 
   constructor(
     protected collaboratoreService: CollaboratoreFrontendService,
-    protected invitoService: InvitoFrontendService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -40,8 +34,6 @@ export class CollaboratoreFrontendUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ collaboratore }) => {
       this.updateForm(collaboratore);
-
-      this.invitoService.query().subscribe((res: HttpResponse<IInvitoFrontend[]>) => (this.invitos = res.body || []));
     });
   }
 
@@ -53,9 +45,7 @@ export class CollaboratoreFrontendUpdateComponent implements OnInit {
       cognome: collaboratore.cognome,
       tipologia: collaboratore.tipologia,
       idPratic: collaboratore.idPratic,
-      idInvito: collaboratore.idInvito,
-      idCollaboratores: collaboratore.idCollaboratores,
-      invitoId: collaboratore.invitoId
+      idInvito: collaboratore.idInvito
     });
   }
 
@@ -82,9 +72,7 @@ export class CollaboratoreFrontendUpdateComponent implements OnInit {
       cognome: this.editForm.get(['cognome'])!.value,
       tipologia: this.editForm.get(['tipologia'])!.value,
       idPratic: this.editForm.get(['idPratic'])!.value,
-      idInvito: this.editForm.get(['idInvito'])!.value,
-      idCollaboratores: this.editForm.get(['idCollaboratores'])!.value,
-      invitoId: this.editForm.get(['invitoId'])!.value
+      idInvito: this.editForm.get(['idInvito'])!.value
     };
   }
 
@@ -102,20 +90,5 @@ export class CollaboratoreFrontendUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
-  }
-
-  trackById(index: number, item: IInvitoFrontend): any {
-    return item.id;
-  }
-
-  getSelected(selectedVals: IInvitoFrontend[], option: IInvitoFrontend): IInvitoFrontend {
-    if (selectedVals) {
-      for (let i = 0; i < selectedVals.length; i++) {
-        if (option.id === selectedVals[i].id) {
-          return selectedVals[i];
-        }
-      }
-    }
-    return option;
   }
 }

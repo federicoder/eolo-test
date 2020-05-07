@@ -10,8 +10,6 @@ import javax.validation.constraints.*;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Cliente.
@@ -42,13 +40,6 @@ public class Cliente implements Serializable {
     @NotNull
     @Column(name = "id_pratica_connessa", nullable = false)
     private Integer idPraticaConnessa;
-
-    @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "cliente_id_cliente",
-               joinColumns = @JoinColumn(name = "cliente_id", referencedColumnName = "id"),
-               inverseJoinColumns = @JoinColumn(name = "id_cliente_id", referencedColumnName = "id"))
-    private Set<Invito> idClientes = new HashSet<>();
 
     @OneToOne(mappedBy = "cliente")
     @JsonIgnore
@@ -113,31 +104,6 @@ public class Cliente implements Serializable {
 
     public void setIdPraticaConnessa(Integer idPraticaConnessa) {
         this.idPraticaConnessa = idPraticaConnessa;
-    }
-
-    public Set<Invito> getIdClientes() {
-        return idClientes;
-    }
-
-    public Cliente idClientes(Set<Invito> invitos) {
-        this.idClientes = invitos;
-        return this;
-    }
-
-    public Cliente addIdCliente(Invito invito) {
-        this.idClientes.add(invito);
-        invito.getIdPraticas().add(this);
-        return this;
-    }
-
-    public Cliente removeIdCliente(Invito invito) {
-        this.idClientes.remove(invito);
-        invito.getIdPraticas().remove(this);
-        return this;
-    }
-
-    public void setIdClientes(Set<Invito> invitos) {
-        this.idClientes = invitos;
     }
 
     public Invito getInvito() {

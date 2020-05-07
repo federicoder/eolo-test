@@ -1,7 +1,6 @@
 package it.maggioli.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -11,8 +10,6 @@ import javax.validation.constraints.*;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Collaboratore.
@@ -50,19 +47,8 @@ public class Collaboratore implements Serializable {
     @Column(name = "id_invito")
     private Integer idInvito;
 
-    @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "collaboratore_id_collaboratore",
-               joinColumns = @JoinColumn(name = "collaboratore_id", referencedColumnName = "id"),
-               inverseJoinColumns = @JoinColumn(name = "id_collaboratore_id", referencedColumnName = "id"))
-    private Set<Invito> idCollaboratores = new HashSet<>();
-
     @OneToOne(mappedBy = "collaboratore")
     @JsonIgnore
-    private Invito invito;
-
-    @ManyToOne
-    @JsonIgnoreProperties("collaboratores")
     private Invito invito;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -150,44 +136,6 @@ public class Collaboratore implements Serializable {
 
     public void setIdInvito(Integer idInvito) {
         this.idInvito = idInvito;
-    }
-
-    public Set<Invito> getIdCollaboratores() {
-        return idCollaboratores;
-    }
-
-    public Collaboratore idCollaboratores(Set<Invito> invitos) {
-        this.idCollaboratores = invitos;
-        return this;
-    }
-
-    public Collaboratore addIdCollaboratore(Invito invito) {
-        this.idCollaboratores.add(invito);
-        invito.getIdUtentes().add(this);
-        return this;
-    }
-
-    public Collaboratore removeIdCollaboratore(Invito invito) {
-        this.idCollaboratores.remove(invito);
-        invito.getIdUtentes().remove(this);
-        return this;
-    }
-
-    public void setIdCollaboratores(Set<Invito> invitos) {
-        this.idCollaboratores = invitos;
-    }
-
-    public Invito getInvito() {
-        return invito;
-    }
-
-    public Collaboratore invito(Invito invito) {
-        this.invito = invito;
-        return this;
-    }
-
-    public void setInvito(Invito invito) {
-        this.invito = invito;
     }
 
     public Invito getInvito() {

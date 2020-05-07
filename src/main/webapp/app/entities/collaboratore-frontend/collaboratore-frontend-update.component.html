@@ -66,21 +66,6 @@
                     <input type="number" class="form-control" name="idInvito" id="field_idInvito"
                            formControlName="idInvito"/>
                 </div>
-
-                <div class="form-group">
-                    <label jhiTranslate="eoloTestApp.collaboratore.idCollaboratore" for="field_idCollaboratores">Id Collaboratore</label>
-                    <select class="form-control" id="field_idCollaboratores" multiple name="idCollaboratores" formControlName="idCollaboratores">
-                        <option [ngValue]="getSelected(editForm.get('idCollaboratores')!.value, invitoOption)" *ngFor="let invitoOption of invitos; trackBy: trackById">{{ invitoOption.id }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="eoloTestApp.collaboratore.invito" for="field_invito">Invito</label>
-                    <select class="form-control" id="field_invito" name="invito" formControlName="invitoId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="invitoOption.id" *ngFor="let invitoOption of invitos; trackBy: trackById">{{ invitoOption.id }}</option>
-                    </select>
-                </div>
             </div>
 
             <div>

@@ -34,26 +34,11 @@
     ],
     "relationships": [
         {
-            "relationshipType": "many-to-many",
-            "otherEntityName": "invito",
-            "otherEntityRelationshipName": "idUtente",
-            "relationshipName": "idCollaboratore",
-            "otherEntityField": "id",
-            "ownerSide": true
-        },
-        {
             "relationshipType": "one-to-one",
             "otherEntityName": "invito",
             "otherEntityRelationshipName": "collaboratore",
             "relationshipName": "invito",
             "ownerSide": false
-        },
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "invito",
-            "otherEntityRelationshipName": "collaboratore",
-            "relationshipName": "invito",
-            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20200506144900",

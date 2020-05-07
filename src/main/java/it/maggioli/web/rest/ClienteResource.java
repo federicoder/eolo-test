@@ -91,24 +91,18 @@ public class ClienteResource {
      * {@code GET  /clientes} : get all the clientes.
      *
      * @param pageable the pagination information.
-     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
      * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of clientes in body.
      */
     @GetMapping("/clientes")
-    public ResponseEntity<List<ClienteDTO>> getAllClientes(Pageable pageable, @RequestParam(required = false) String filter, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
+    public ResponseEntity<List<ClienteDTO>> getAllClientes(Pageable pageable, @RequestParam(required = false) String filter) {
         if ("invito-is-null".equals(filter)) {
             log.debug("REST request to get all Clientes where invito is null");
             return new ResponseEntity<>(clienteService.findAllWhereInvitoIsNull(),
                     HttpStatus.OK);
         }
         log.debug("REST request to get a page of Clientes");
-        Page<ClienteDTO> page;
-        if (eagerload) {
-            page = clienteService.findAllWithEagerRelationships(pageable);
-        } else {
-            page = clienteService.findAll(pageable);
-        }
+        Page<ClienteDTO> page = clienteService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

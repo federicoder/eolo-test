@@ -66,18 +66,19 @@ relationship OneToOne {
     Licenza to StorageCloud,
     Professionista to StorageCloud
 }
-relationship OneToMany{
-	Licenza to Pratica,
-    Pratica to Invito,
-	Professionista to Invito,
-    Invito to Collaboratore
-}
-relationship ManyToMany{
-    Collaboratore{idCollaboratore} to Invito{idUtente},
-    Cliente{idCliente} to Invito{idPratica}
 
-}
+//relationship OneToMany{
+//	Licenza to Pratica,
+//    Pratica to Invito,
+//	Professionista to Invito,
+//    Invito to Collaboratore
+//}
+//relationship ManyToMany{
+//    Collaboratore{idCollaboratore} to Invito{idUtente},
+//    Cliente{idCliente} to Invito{idPratica}
 
+//}
+//
 // Set pagination options
 //paginate JobHistory, Employee with infinite-scroll
 paginate Collaboratore, Professionista, Cliente with pagination

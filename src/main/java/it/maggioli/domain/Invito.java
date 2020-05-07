@@ -1,7 +1,5 @@
 package it.maggioli.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -11,8 +9,6 @@ import javax.validation.constraints.*;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Invito.
@@ -50,28 +46,6 @@ public class Invito implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private Cliente cliente;
-
-    @OneToMany(mappedBy = "invito")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Collaboratore> collaboratores = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties("invitos")
-    private Pratica pratica;
-
-    @ManyToOne
-    @JsonIgnoreProperties("invitos")
-    private Professionista professionista;
-
-    @ManyToMany(mappedBy = "idCollaboratores")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JsonIgnore
-    private Set<Collaboratore> idUtentes = new HashSet<>();
-
-    @ManyToMany(mappedBy = "idClientes")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JsonIgnore
-    private Set<Cliente> idPraticas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -158,107 +132,6 @@ public class Invito implements Serializable {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-
-    public Set<Collaboratore> getCollaboratores() {
-        return collaboratores;
-    }
-
-    public Invito collaboratores(Set<Collaboratore> collaboratores) {
-        this.collaboratores = collaboratores;
-        return this;
-    }
-
-    public Invito addCollaboratore(Collaboratore collaboratore) {
-        this.collaboratores.add(collaboratore);
-        collaboratore.setInvito(this);
-        return this;
-    }
-
-    public Invito removeCollaboratore(Collaboratore collaboratore) {
-        this.collaboratores.remove(collaboratore);
-        collaboratore.setInvito(null);
-        return this;
-    }
-
-    public void setCollaboratores(Set<Collaboratore> collaboratores) {
-        this.collaboratores = collaboratores;
-    }
-
-    public Pratica getPratica() {
-        return pratica;
-    }
-
-    public Invito pratica(Pratica pratica) {
-        this.pratica = pratica;
-        return this;
-    }
-
-    public void setPratica(Pratica pratica) {
-        this.pratica = pratica;
-    }
-
-    public Professionista getProfessionista() {
-        return professionista;
-    }
-
-    public Invito professionista(Professionista professionista) {
-        this.professionista = professionista;
-        return this;
-    }
-
-    public void setProfessionista(Professionista professionista) {
-        this.professionista = professionista;
-    }
-
-    public Set<Collaboratore> getIdUtentes() {
-        return idUtentes;
-    }
-
-    public Invito idUtentes(Set<Collaboratore> collaboratores) {
-        this.idUtentes = collaboratores;
-        return this;
-    }
-
-    public Invito addIdUtente(Collaboratore collaboratore) {
-        this.idUtentes.add(collaboratore);
-        collaboratore.getIdCollaboratores().add(this);
-        return this;
-    }
-
-    public Invito removeIdUtente(Collaboratore collaboratore) {
-        this.idUtentes.remove(collaboratore);
-        collaboratore.getIdCollaboratores().remove(this);
-        return this;
-    }
-
-    public void setIdUtentes(Set<Collaboratore> collaboratores) {
-        this.idUtentes = collaboratores;
-    }
-
-    public Set<Cliente> getIdPraticas() {
-        return idPraticas;
-    }
-
-    public Invito idPraticas(Set<Cliente> clientes) {
-        this.idPraticas = clientes;
-        return this;
-    }
-
-    public Invito addIdPratica(Cliente cliente) {
-        this.idPraticas.add(cliente);
-        cliente.getIdClientes().add(this);
-        return this;
-    }
-
-    public Invito removeIdPratica(Cliente cliente) {
-        this.idPraticas.remove(cliente);
-        cliente.getIdClientes().remove(this);
-        return this;
-    }
-
-    public void setIdPraticas(Set<Cliente> clientes) {
-        this.idPraticas = clientes;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

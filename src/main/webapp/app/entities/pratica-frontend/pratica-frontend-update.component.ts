@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 
 import { IPraticaFrontend, PraticaFrontend } from 'app/shared/model/pratica-frontend.model';
 import { PraticaFrontendService } from './pratica-frontend.service';
-import { ILicenzaFrontend } from 'app/shared/model/licenza-frontend.model';
-import { LicenzaFrontendService } from 'app/entities/licenza-frontend/licenza-frontend.service';
 
 @Component({
   selector: 'jhi-pratica-frontend-update',
@@ -16,7 +14,6 @@ import { LicenzaFrontendService } from 'app/entities/licenza-frontend/licenza-fr
 })
 export class PraticaFrontendUpdateComponent implements OnInit {
   isSaving = false;
-  licenzas: ILicenzaFrontend[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -24,22 +21,14 @@ export class PraticaFrontendUpdateComponent implements OnInit {
     idLic: [null, [Validators.required]],
     tdp: [null, [Validators.required]],
     idCollab: [],
-    idClient: [null, [Validators.required]],
-    licenzaId: []
+    idClient: [null, [Validators.required]]
   });
 
-  constructor(
-    protected praticaService: PraticaFrontendService,
-    protected licenzaService: LicenzaFrontendService,
-    protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
-  ) {}
+  constructor(protected praticaService: PraticaFrontendService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ pratica }) => {
       this.updateForm(pratica);
-
-      this.licenzaService.query().subscribe((res: HttpResponse<ILicenzaFrontend[]>) => (this.licenzas = res.body || []));
     });
   }
 
@@ -50,8 +39,7 @@ export class PraticaFrontendUpdateComponent implements OnInit {
       idLic: pratica.idLic,
       tdp: pratica.tdp,
       idCollab: pratica.idCollab,
-      idClient: pratica.idClient,
-      licenzaId: pratica.licenzaId
+      idClient: pratica.idClient
     });
   }
 
@@ -77,8 +65,7 @@ export class PraticaFrontendUpdateComponent implements OnInit {
       idLic: this.editForm.get(['idLic'])!.value,
       tdp: this.editForm.get(['tdp'])!.value,
       idCollab: this.editForm.get(['idCollab'])!.value,
-      idClient: this.editForm.get(['idClient'])!.value,
-      licenzaId: this.editForm.get(['licenzaId'])!.value
+      idClient: this.editForm.get(['idClient'])!.value
     };
   }
 
@@ -96,9 +83,5 @@ export class PraticaFrontendUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
-  }
-
-  trackById(index: number, item: ILicenzaFrontend): any {
-    return item.id;
   }
 }

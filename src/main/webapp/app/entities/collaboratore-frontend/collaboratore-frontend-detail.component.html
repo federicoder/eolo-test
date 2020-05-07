@@ -32,18 +32,6 @@
                 <dd>
                     <span>{{ collaboratore.idInvito }}</span>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.collaboratore.idCollaboratore">Id Collaboratore</span></dt>
-                <dd>
-                    <span *ngFor="let idCollaboratore of collaboratore.idCollaboratores; let last = last">
-                        <a [routerLink]="['/invito-frontend', idCollaboratore?.id, 'view']">{{ idCollaboratore.id }}</a>{{ last ? '' : ', ' }}
-                    </span>
-                </dd>
-                <dt><span jhiTranslate="eoloTestApp.collaboratore.invito">Invito</span></dt>
-                <dd>
-                    <div *ngIf="collaboratore.invitoId">
-                        <a [routerLink]="['/invito-frontend', collaboratore.invitoId, 'view']">{{ collaboratore.invitoId }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

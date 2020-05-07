@@ -9,15 +9,11 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link Collaboratore} and its DTO {@link CollaboratoreDTO}.
  */
-@Mapper(componentModel = "spring", uses = {InvitoMapper.class})
+@Mapper(componentModel = "spring", uses = {})
 public interface CollaboratoreMapper extends EntityMapper<CollaboratoreDTO, Collaboratore> {
 
-    @Mapping(source = "invito.id", target = "invitoId")
-    CollaboratoreDTO toDto(Collaboratore collaboratore);
 
-    @Mapping(target = "removeIdCollaboratore", ignore = true)
     @Mapping(target = "invito", ignore = true)
-    @Mapping(source = "invitoId", target = "invito")
     Collaboratore toEntity(CollaboratoreDTO collaboratoreDTO);
 
     default Collaboratore fromId(Long id) {

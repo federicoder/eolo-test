@@ -1,5 +1,4 @@
 import { Moment } from 'moment';
-import { IPraticaFrontend } from 'app/shared/model/pratica-frontend.model';
 
 export interface ILicenzaFrontend {
   id?: number;
@@ -9,7 +8,6 @@ export interface ILicenzaFrontend {
   dataScadenza?: Moment;
   professionistaId?: number;
   storageCloudId?: number;
-  praticas?: IPraticaFrontend[];
 }
 
 export class LicenzaFrontend implements ILicenzaFrontend {
@@ -20,7 +18,6 @@ export class LicenzaFrontend implements ILicenzaFrontend {
     public descrizione?: string,
     public dataScadenza?: Moment,
     public professionistaId?: number,
-    public storageCloudId?: number,
-    public praticas?: IPraticaFrontend[]
+    public storageCloudId?: number
   ) {}
 }

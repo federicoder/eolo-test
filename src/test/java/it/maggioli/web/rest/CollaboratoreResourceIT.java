@@ -23,7 +23,6 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -64,14 +63,8 @@ public class CollaboratoreResourceIT {
     @Autowired
     private CollaboratoreRepository collaboratoreRepository;
 
-    @Mock
-    private CollaboratoreRepository collaboratoreRepositoryMock;
-
     @Autowired
     private CollaboratoreMapper collaboratoreMapper;
-
-    @Mock
-    private CollaboratoreService collaboratoreServiceMock;
 
     @Autowired
     private CollaboratoreService collaboratoreService;
@@ -238,26 +231,6 @@ public class CollaboratoreResourceIT {
             .andExpect(jsonPath("$.[*].idInvito").value(hasItem(DEFAULT_ID_INVITO)));
     }
     
-    @SuppressWarnings({"unchecked"})
-    public void getAllCollaboratoresWithEagerRelationshipsIsEnabled() throws Exception {
-        when(collaboratoreServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        restCollaboratoreMockMvc.perform(get("/api/collaboratores?eagerload=true"))
-            .andExpect(status().isOk());
-
-        verify(collaboratoreServiceMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
-    @SuppressWarnings({"unchecked"})
-    public void getAllCollaboratoresWithEagerRelationshipsIsNotEnabled() throws Exception {
-        when(collaboratoreServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        restCollaboratoreMockMvc.perform(get("/api/collaboratores?eagerload=true"))
-            .andExpect(status().isOk());
-
-        verify(collaboratoreServiceMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
     @Test
     @Transactional
     public void getCollaboratore() throws Exception {

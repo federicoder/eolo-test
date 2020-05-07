@@ -23,7 +23,6 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -58,14 +57,8 @@ public class ClienteResourceIT {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    @Mock
-    private ClienteRepository clienteRepositoryMock;
-
     @Autowired
     private ClienteMapper clienteMapper;
-
-    @Mock
-    private ClienteService clienteServiceMock;
 
     @Autowired
     private ClienteService clienteService;
@@ -224,26 +217,6 @@ public class ClienteResourceIT {
             .andExpect(jsonPath("$.[*].idPraticaConnessa").value(hasItem(DEFAULT_ID_PRATICA_CONNESSA)));
     }
     
-    @SuppressWarnings({"unchecked"})
-    public void getAllClientesWithEagerRelationshipsIsEnabled() throws Exception {
-        when(clienteServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        restClienteMockMvc.perform(get("/api/clientes?eagerload=true"))
-            .andExpect(status().isOk());
-
-        verify(clienteServiceMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
-    @SuppressWarnings({"unchecked"})
-    public void getAllClientesWithEagerRelationshipsIsNotEnabled() throws Exception {
-        when(clienteServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        restClienteMockMvc.perform(get("/api/clientes?eagerload=true"))
-            .andExpect(status().isOk());
-
-        verify(clienteServiceMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
     @Test
     @Transactional
     public void getCliente() throws Exception {

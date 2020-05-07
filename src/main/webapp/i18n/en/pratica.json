@@ -21,9 +21,7 @@
       "idLic": "Id Lic",
       "tdp": "Tdp",
       "idCollab": "Id Collab",
-      "idClient": "Id Client",
-      "invito": "Invito",
-      "licenza": "Licenza"
+      "idClient": "Id Client"
     }
   }
 }

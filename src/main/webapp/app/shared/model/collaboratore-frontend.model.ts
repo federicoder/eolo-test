@@ -1,5 +1,3 @@
-import { IInvitoFrontend } from 'app/shared/model/invito-frontend.model';
-
 export interface ICollaboratoreFrontend {
   id?: number;
   idCollaboratore?: number;
@@ -8,8 +6,6 @@ export interface ICollaboratoreFrontend {
   tipologia?: string;
   idPratic?: number;
   idInvito?: number;
-  idCollaboratores?: IInvitoFrontend[];
-  invitoId?: number;
   invitoId?: number;
 }
 
@@ -22,8 +18,6 @@ export class CollaboratoreFrontend implements ICollaboratoreFrontend {
     public tipologia?: string,
     public idPratic?: number,
     public idInvito?: number,
-    public idCollaboratores?: IInvitoFrontend[],
-    public invitoId?: number,
     public invitoId?: number
   ) {}
 }

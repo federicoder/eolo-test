@@ -1,6 +1,5 @@
 package it.maggioli.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -10,8 +9,6 @@ import javax.validation.constraints.*;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Pratica.
@@ -47,14 +44,6 @@ public class Pratica implements Serializable {
     @NotNull
     @Column(name = "id_client", nullable = false)
     private Integer idClient;
-
-    @OneToMany(mappedBy = "pratica")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Invito> invitos = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties("praticas")
-    private Licenza licenza;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -128,44 +117,6 @@ public class Pratica implements Serializable {
 
     public void setIdClient(Integer idClient) {
         this.idClient = idClient;
-    }
-
-    public Set<Invito> getInvitos() {
-        return invitos;
-    }
-
-    public Pratica invitos(Set<Invito> invitos) {
-        this.invitos = invitos;
-        return this;
-    }
-
-    public Pratica addInvito(Invito invito) {
-        this.invitos.add(invito);
-        invito.setPratica(this);
-        return this;
-    }
-
-    public Pratica removeInvito(Invito invito) {
-        this.invitos.remove(invito);
-        invito.setPratica(null);
-        return this;
-    }
-
-    public void setInvitos(Set<Invito> invitos) {
-        this.invitos = invitos;
-    }
-
-    public Licenza getLicenza() {
-        return licenza;
-    }
-
-    public Pratica licenza(Licenza licenza) {
-        this.licenza = licenza;
-        return this;
-    }
-
-    public void setLicenza(Licenza licenza) {
-        this.licenza = licenza;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

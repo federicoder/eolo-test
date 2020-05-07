@@ -10,8 +10,6 @@ import javax.validation.constraints.*;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Professionista.
@@ -58,10 +56,6 @@ public class Professionista implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private StorageCloud storageCloud;
-
-    @OneToMany(mappedBy = "professionista")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Invito> invitos = new HashSet<>();
 
     @OneToOne(mappedBy = "professionista")
     @JsonIgnore
@@ -191,31 +185,6 @@ public class Professionista implements Serializable {
 
     public void setStorageCloud(StorageCloud storageCloud) {
         this.storageCloud = storageCloud;
-    }
-
-    public Set<Invito> getInvitos() {
-        return invitos;
-    }
-
-    public Professionista invitos(Set<Invito> invitos) {
-        this.invitos = invitos;
-        return this;
-    }
-
-    public Professionista addInvito(Invito invito) {
-        this.invitos.add(invito);
-        invito.setProfessionista(this);
-        return this;
-    }
-
-    public Professionista removeInvito(Invito invito) {
-        this.invitos.remove(invito);
-        invito.setProfessionista(null);
-        return this;
-    }
-
-    public void setInvitos(Set<Invito> invitos) {
-        this.invitos = invitos;
     }
 
     public Licenza getLicenza() {

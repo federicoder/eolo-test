@@ -54,13 +54,6 @@
                         </small>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label jhiTranslate="eoloTestApp.cliente.idCliente" for="field_idClientes">Id Cliente</label>
-                    <select class="form-control" id="field_idClientes" multiple name="idClientes" formControlName="idClientes">
-                        <option [ngValue]="getSelected(editForm.get('idClientes')!.value, invitoOption)" *ngFor="let invitoOption of invitos; trackBy: trackById">{{ invitoOption.id }}</option>
-                    </select>
-                </div>
             </div>
 
             <div>

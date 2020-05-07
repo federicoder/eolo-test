@@ -70,15 +70,6 @@ public class ClienteService {
             .map(clienteMapper::toDto);
     }
 
-    /**
-     * Get all the clientes with eager load of many-to-many relationships.
-     *
-     * @return the list of entities.
-     */
-    public Page<ClienteDTO> findAllWithEagerRelationships(Pageable pageable) {
-        return clienteRepository.findAllWithEagerRelationships(pageable).map(clienteMapper::toDto);
-    }
-
 
     /**
      *  Get all the clientes where Invito is {@code null}.
@@ -103,7 +94,7 @@ public class ClienteService {
     @Transactional(readOnly = true)
     public Optional<ClienteDTO> findOne(Long id) {
         log.debug("Request to get Cliente : {}", id);
-        return clienteRepository.findOneWithEagerRelationships(id)
+        return clienteRepository.findById(id)
             .map(clienteMapper::toDto);
     }
 

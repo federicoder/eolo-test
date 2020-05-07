@@ -36,18 +36,6 @@
                         <a [routerLink]="['/cliente-frontend', invito.clienteId, 'view']">{{ invito.clienteId }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="eoloTestApp.invito.pratica">Pratica</span></dt>
-                <dd>
-                    <div *ngIf="invito.praticaId">
-                        <a [routerLink]="['/pratica-frontend', invito.praticaId, 'view']">{{ invito.praticaId }}</a>
-                    </div>
-                </dd>
-                <dt><span jhiTranslate="eoloTestApp.invito.professionista">Professionista</span></dt>
-                <dd>
-                    <div *ngIf="invito.professionistaId">
-                        <a [routerLink]="['/professionista-frontend', invito.professionistaId, 'view']">{{ invito.professionistaId }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

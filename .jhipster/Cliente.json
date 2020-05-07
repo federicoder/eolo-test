@@ -26,14 +26,6 @@
     ],
     "relationships": [
         {
-            "relationshipType": "many-to-many",
-            "otherEntityName": "invito",
-            "otherEntityRelationshipName": "idPratica",
-            "relationshipName": "idCliente",
-            "otherEntityField": "id",
-            "ownerSide": true
-        },
-        {
             "relationshipType": "one-to-one",
             "otherEntityName": "invito",
             "otherEntityRelationshipName": "cliente",

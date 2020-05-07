@@ -2,8 +2,6 @@ package it.maggioli.service.dto;
 
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -27,9 +25,6 @@ public class CollaboratoreDTO implements Serializable {
 
     private Integer idInvito;
 
-    private Set<InvitoDTO> idCollaboratores = new HashSet<>();
-
-    private Long invitoId;
     
     public Long getId() {
         return id;
@@ -87,22 +82,6 @@ public class CollaboratoreDTO implements Serializable {
         this.idInvito = idInvito;
     }
 
-    public Set<InvitoDTO> getIdCollaboratores() {
-        return idCollaboratores;
-    }
-
-    public void setIdCollaboratores(Set<InvitoDTO> invitos) {
-        this.idCollaboratores = invitos;
-    }
-
-    public Long getInvitoId() {
-        return invitoId;
-    }
-
-    public void setInvitoId(Long invitoId) {
-        this.invitoId = invitoId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -134,8 +113,6 @@ public class CollaboratoreDTO implements Serializable {
             ", tipologia='" + getTipologia() + "'" +
             ", idPratic=" + getIdPratic() +
             ", idInvito=" + getIdInvito() +
-            ", idCollaboratores='" + getIdCollaboratores() + "'" +
-            ", invitoId=" + getInvitoId() +
             "}";
     }
 }

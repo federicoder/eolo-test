@@ -9,11 +9,10 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link Cliente} and its DTO {@link ClienteDTO}.
  */
-@Mapper(componentModel = "spring", uses = {InvitoMapper.class})
+@Mapper(componentModel = "spring", uses = {})
 public interface ClienteMapper extends EntityMapper<ClienteDTO, Cliente> {
 
 
-    @Mapping(target = "removeIdCliente", ignore = true)
     @Mapping(target = "invito", ignore = true)
     Cliente toEntity(ClienteDTO clienteDTO);
 

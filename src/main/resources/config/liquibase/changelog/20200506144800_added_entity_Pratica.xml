@@ -30,9 +30,6 @@
             <column name="id_client" type="integer">
                 <constraints nullable="false" />
             </column>
-            <column name="licenza_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
     </changeSet>
