@@ -12,14 +12,14 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {ProfessionistaMapper.class, StorageCloudMapper.class})
 public interface LicenzaMapper extends EntityMapper<LicenzaDTO, Licenza> {
 
-    @Mapping(source = "idLicenza.id", target = "idLicenzaId")
-    @Mapping(source = "idLicenza.id", target = "idLicenzaId")
+    @Mapping(source = "professionista.id", target = "professionistaId")
+    @Mapping(source = "storageCloud.id", target = "storageCloudId")
     LicenzaDTO toDto(Licenza licenza);
 
-    @Mapping(source = "idLicenzaId", target = "idLicenza")
-    @Mapping(source = "idLicenzaId", target = "idLicenza")
-    @Mapping(target = "idLicenzas", ignore = true)
-    @Mapping(target = "removeIdLicenza", ignore = true)
+    @Mapping(source = "professionistaId", target = "professionista")
+    @Mapping(source = "storageCloudId", target = "storageCloud")
+    @Mapping(target = "praticas", ignore = true)
+    @Mapping(target = "removePratica", ignore = true)
     Licenza toEntity(LicenzaDTO licenzaDTO);
 
     default Licenza fromId(Long id) {

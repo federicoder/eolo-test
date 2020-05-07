@@ -22,9 +22,9 @@ public class LicenzaDTO implements Serializable {
     private LocalDate dataScadenza;
 
 
-    private Long idLicenzaId;
+    private Long professionistaId;
 
-    private Long idLicenzaId;
+    private Long storageCloudId;
     
     public Long getId() {
         return id;
@@ -66,20 +66,20 @@ public class LicenzaDTO implements Serializable {
         this.dataScadenza = dataScadenza;
     }
 
-    public Long getIdLicenzaId() {
-        return idLicenzaId;
+    public Long getProfessionistaId() {
+        return professionistaId;
     }
 
-    public void setIdLicenzaId(Long professionistaId) {
-        this.idLicenzaId = professionistaId;
+    public void setProfessionistaId(Long professionistaId) {
+        this.professionistaId = professionistaId;
     }
 
-    public Long getIdLicenzaId() {
-        return idLicenzaId;
+    public Long getStorageCloudId() {
+        return storageCloudId;
     }
 
-    public void setIdLicenzaId(Long storageCloudId) {
-        this.idLicenzaId = storageCloudId;
+    public void setStorageCloudId(Long storageCloudId) {
+        this.storageCloudId = storageCloudId;
     }
 
     @Override
@@ -111,8 +111,8 @@ public class LicenzaDTO implements Serializable {
             ", tipologia='" + getTipologia() + "'" +
             ", descrizione='" + getDescrizione() + "'" +
             ", dataScadenza='" + getDataScadenza() + "'" +
-            ", idLicenzaId=" + getIdLicenzaId() +
-            ", idLicenzaId=" + getIdLicenzaId() +
+            ", professionistaId=" + getProfessionistaId() +
+            ", storageCloudId=" + getStorageCloudId() +
             "}";
     }
 }

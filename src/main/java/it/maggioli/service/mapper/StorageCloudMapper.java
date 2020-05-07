@@ -13,6 +13,9 @@ import org.mapstruct.*;
 public interface StorageCloudMapper extends EntityMapper<StorageCloudDTO, StorageCloud> {
 
 
+    @Mapping(target = "licenza", ignore = true)
+    @Mapping(target = "professionista", ignore = true)
+    StorageCloud toEntity(StorageCloudDTO storageCloudDTO);
 
     default StorageCloud fromId(Long id) {
         if (id == null) {

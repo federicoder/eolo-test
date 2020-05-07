@@ -97,9 +97,9 @@ public class CollaboratoreResource {
      */
     @GetMapping("/collaboratores")
     public ResponseEntity<List<CollaboratoreDTO>> getAllCollaboratores(Pageable pageable, @RequestParam(required = false) String filter, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
-        if ("idcollaboratore-is-null".equals(filter)) {
-            log.debug("REST request to get all Collaboratores where idCollaboratore is null");
-            return new ResponseEntity<>(collaboratoreService.findAllWhereIdCollaboratoreIsNull(),
+        if ("invito-is-null".equals(filter)) {
+            log.debug("REST request to get all Collaboratores where invito is null");
+            return new ResponseEntity<>(collaboratoreService.findAllWhereInvitoIsNull(),
                     HttpStatus.OK);
         }
         log.debug("REST request to get a page of Collaboratores");

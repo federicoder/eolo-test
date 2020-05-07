@@ -39,12 +39,12 @@
             "relationshipType": "one-to-many",
             "otherEntityName": "invito",
             "otherEntityRelationshipName": "pratica",
-            "relationshipName": "idPratica"
+            "relationshipName": "invito"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "licenza",
-            "otherEntityRelationshipName": "idLicenza",
+            "otherEntityRelationshipName": "pratica",
             "relationshipName": "licenza",
             "otherEntityField": "id"
         }

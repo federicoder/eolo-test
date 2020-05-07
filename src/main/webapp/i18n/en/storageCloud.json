@@ -20,7 +20,9 @@
       "idUtente": "Id Utente",
       "idLicenza": "Id Licenza",
       "pianoBase": "Piano Base",
-      "dataCessione": "Data Cessione"
+      "dataCessione": "Data Cessione",
+      "licenza": "Licenza",
+      "professionista": "Professionista"
     }
   }
 }

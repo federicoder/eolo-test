@@ -21,11 +21,11 @@
       "idUtente": "Id Utente",
       "idPratica": "Id Pratica",
       "idInvito": "Id Invito",
-      "idUtente": "Id Utente",
-      "idUtente": "Id Utente",
-      "idInvito": "Id Invito",
+      "collaboratore": "Collaboratore",
+      "cliente": "Cliente",
+      "collaboratore": "Collaboratore",
       "pratica": "Pratica",
-      "idUtente": "Id Utente",
+      "professionista": "Professionista",
       "idUtente": "Id Utente",
       "idPratica": "Id Pratica"
     }

@@ -6,6 +6,8 @@ export interface IStorageCloudFrontend {
   idLicenza?: number;
   pianoBase?: string;
   dataCessione?: Moment;
+  licenzaId?: number;
+  professionistaId?: number;
 }
 
 export class StorageCloudFrontend implements IStorageCloudFrontend {
@@ -14,6 +16,8 @@ export class StorageCloudFrontend implements IStorageCloudFrontend {
     public idUtente?: number,
     public idLicenza?: number,
     public pianoBase?: string,
-    public dataCessione?: Moment
+    public dataCessione?: Moment,
+    public licenzaId?: number,
+    public professionistaId?: number
   ) {}
 }

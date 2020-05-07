@@ -25,8 +25,8 @@ type SelectableEntity = ICollaboratoreFrontend | IClienteFrontend | IPraticaFron
 })
 export class InvitoFrontendUpdateComponent implements OnInit {
   isSaving = false;
-  idutentes: ICollaboratoreFrontend[] = [];
-  idutentes: IClienteFrontend[] = [];
+  collaboratores: ICollaboratoreFrontend[] = [];
+  clientes: IClienteFrontend[] = [];
   praticas: IPraticaFrontend[] = [];
   professionistas: IProfessionistaFrontend[] = [];
 
@@ -36,10 +36,10 @@ export class InvitoFrontendUpdateComponent implements OnInit {
     idUtente: [],
     idPratica: [],
     idInvito: [null, [Validators.required]],
-    idUtenteId: [],
-    idUtenteId: [],
+    collaboratoreId: [],
+    clienteId: [],
     praticaId: [],
-    idUtenteId: []
+    professionistaId: []
   });
 
   constructor(
@@ -57,24 +57,24 @@ export class InvitoFrontendUpdateComponent implements OnInit {
       this.updateForm(invito);
 
       this.collaboratoreService
-        .query({ filter: 'idcollaboratore-is-null' })
+        .query({ filter: 'invito-is-null' })
         .pipe(
           map((res: HttpResponse<ICollaboratoreFrontend[]>) => {
             return res.body || [];
           })
         )
         .subscribe((resBody: ICollaboratoreFrontend[]) => {
-          if (!invito.idUtenteId) {
-            this.idutentes = resBody;
+          if (!invito.collaboratoreId) {
+            this.collaboratores = resBody;
           } else {
             this.collaboratoreService
-              .find(invito.idUtenteId)
+              .find(invito.collaboratoreId)
               .pipe(
                 map((subRes: HttpResponse<ICollaboratoreFrontend>) => {
                   return subRes.body ? [subRes.body].concat(resBody) : resBody;
                 })
               )
-              .subscribe((concatRes: ICollaboratoreFrontend[]) => (this.idutentes = concatRes));
+              .subscribe((concatRes: ICollaboratoreFrontend[]) => (this.collaboratores = concatRes));
           }
         });
 
@@ -86,17 +86,17 @@ export class InvitoFrontendUpdateComponent implements OnInit {
           })
         )
         .subscribe((resBody: IClienteFrontend[]) => {
-          if (!invito.idUtenteId) {
-            this.idutentes = resBody;
+          if (!invito.clienteId) {
+            this.clientes = resBody;
           } else {
             this.clienteService
-              .find(invito.idUtenteId)
+              .find(invito.clienteId)
               .pipe(
                 map((subRes: HttpResponse<IClienteFrontend>) => {
                   return subRes.body ? [subRes.body].concat(resBody) : resBody;
                 })
               )
-              .subscribe((concatRes: IClienteFrontend[]) => (this.idutentes = concatRes));
+              .subscribe((concatRes: IClienteFrontend[]) => (this.clientes = concatRes));
           }
         });
 
@@ -115,10 +115,10 @@ export class InvitoFrontendUpdateComponent implements OnInit {
       idUtente: invito.idUtente,
       idPratica: invito.idPratica,
       idInvito: invito.idInvito,
-      idUtenteId: invito.idUtenteId,
-      idUtenteId: invito.idUtenteId,
+      collaboratoreId: invito.collaboratoreId,
+      clienteId: invito.clienteId,
       praticaId: invito.praticaId,
-      idUtenteId: invito.idUtenteId
+      professionistaId: invito.professionistaId
     });
   }
 
@@ -144,10 +144,10 @@ export class InvitoFrontendUpdateComponent implements OnInit {
       idUtente: this.editForm.get(['idUtente'])!.value,
       idPratica: this.editForm.get(['idPratica'])!.value,
       idInvito: this.editForm.get(['idInvito'])!.value,
-      idUtenteId: this.editForm.get(['idUtenteId'])!.value,
-      idUtenteId: this.editForm.get(['idUtenteId'])!.value,
+      collaboratoreId: this.editForm.get(['collaboratoreId'])!.value,
+      clienteId: this.editForm.get(['clienteId'])!.value,
       praticaId: this.editForm.get(['praticaId'])!.value,
-      idUtenteId: this.editForm.get(['idUtenteId'])!.value
+      professionistaId: this.editForm.get(['professionistaId'])!.value
     };
   }
 

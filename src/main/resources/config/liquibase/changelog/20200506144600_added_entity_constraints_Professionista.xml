@@ -8,9 +8,9 @@
     -->
     <changeSet id="20200506144600-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="id_professionista_id"
+        <addForeignKeyConstraint baseColumnNames="storage_cloud_id"
                                  baseTableName="professionista"
-                                 constraintName="fk_professionista_id_professionista_id"
+                                 constraintName="fk_professionista_storage_cloud_id"
                                  referencedColumnNames="id"
                                  referencedTableName="storage_cloud"/>
 

@@ -7,9 +7,9 @@ export interface ILicenzaFrontend {
   tipologia?: string;
   descrizione?: string;
   dataScadenza?: Moment;
-  idLicenzaId?: number;
-  idLicenzaId?: number;
-  idLicenzas?: IPraticaFrontend[];
+  professionistaId?: number;
+  storageCloudId?: number;
+  praticas?: IPraticaFrontend[];
 }
 
 export class LicenzaFrontend implements ILicenzaFrontend {
@@ -19,8 +19,8 @@ export class LicenzaFrontend implements ILicenzaFrontend {
     public tipologia?: string,
     public descrizione?: string,
     public dataScadenza?: Moment,
-    public idLicenzaId?: number,
-    public idLicenzaId?: number,
-    public idLicenzas?: IPraticaFrontend[]
+    public professionistaId?: number,
+    public storageCloudId?: number,
+    public praticas?: IPraticaFrontend[]
   ) {}
 }

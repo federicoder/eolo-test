@@ -1,5 +1,6 @@
 package it.maggioli.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -56,11 +57,15 @@ public class Professionista implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private StorageCloud idProfessionista;
+    private StorageCloud storageCloud;
 
-    @OneToMany(mappedBy = "idUtente")
+    @OneToMany(mappedBy = "professionista")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Invito> idProfessionistas = new HashSet<>();
+    private Set<Invito> invitos = new HashSet<>();
+
+    @OneToOne(mappedBy = "professionista")
+    @JsonIgnore
+    private Licenza licenza;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -175,42 +180,55 @@ public class Professionista implements Serializable {
         this.idLicenza = idLicenza;
     }
 
-    public StorageCloud getIdProfessionista() {
-        return idProfessionista;
+    public StorageCloud getStorageCloud() {
+        return storageCloud;
     }
 
-    public Professionista idProfessionista(StorageCloud storageCloud) {
-        this.idProfessionista = storageCloud;
+    public Professionista storageCloud(StorageCloud storageCloud) {
+        this.storageCloud = storageCloud;
         return this;
     }
 
-    public void setIdProfessionista(StorageCloud storageCloud) {
-        this.idProfessionista = storageCloud;
+    public void setStorageCloud(StorageCloud storageCloud) {
+        this.storageCloud = storageCloud;
     }
 
-    public Set<Invito> getIdProfessionistas() {
-        return idProfessionistas;
+    public Set<Invito> getInvitos() {
+        return invitos;
     }
 
-    public Professionista idProfessionistas(Set<Invito> invitos) {
-        this.idProfessionistas = invitos;
+    public Professionista invitos(Set<Invito> invitos) {
+        this.invitos = invitos;
         return this;
     }
 
-    public Professionista addIdProfessionista(Invito invito) {
-        this.idProfessionistas.add(invito);
-        invito.setIdUtente(this);
+    public Professionista addInvito(Invito invito) {
+        this.invitos.add(invito);
+        invito.setProfessionista(this);
         return this;
     }
 
-    public Professionista removeIdProfessionista(Invito invito) {
-        this.idProfessionistas.remove(invito);
-        invito.setIdUtente(null);
+    public Professionista removeInvito(Invito invito) {
+        this.invitos.remove(invito);
+        invito.setProfessionista(null);
         return this;
     }
 
-    public void setIdProfessionistas(Set<Invito> invitos) {
-        this.idProfessionistas = invitos;
+    public void setInvitos(Set<Invito> invitos) {
+        this.invitos = invitos;
+    }
+
+    public Licenza getLicenza() {
+        return licenza;
+    }
+
+    public Professionista licenza(Licenza licenza) {
+        this.licenza = licenza;
+        return this;
+    }
+
+    public void setLicenza(Licenza licenza) {
+        this.licenza = licenza;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

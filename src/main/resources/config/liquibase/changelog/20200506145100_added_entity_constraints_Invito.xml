@@ -8,15 +8,15 @@
     -->
     <changeSet id="20200506145100-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="id_utente_id"
+        <addForeignKeyConstraint baseColumnNames="collaboratore_id"
                                  baseTableName="invito"
-                                 constraintName="fk_invito_id_utente_id"
+                                 constraintName="fk_invito_collaboratore_id"
                                  referencedColumnNames="id"
                                  referencedTableName="collaboratore"/>
 
-        <addForeignKeyConstraint baseColumnNames="id_utente_id"
+        <addForeignKeyConstraint baseColumnNames="cliente_id"
                                  baseTableName="invito"
-                                 constraintName="fk_invito_id_utente_id"
+                                 constraintName="fk_invito_cliente_id"
                                  referencedColumnNames="id"
                                  referencedTableName="cliente"/>
 
@@ -26,9 +26,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="pratica"/>
 
-        <addForeignKeyConstraint baseColumnNames="id_utente_id"
+        <addForeignKeyConstraint baseColumnNames="professionista_id"
                                  baseTableName="invito"
-                                 constraintName="fk_invito_id_utente_id"
+                                 constraintName="fk_invito_professionista_id"
                                  referencedColumnNames="id"
                                  referencedTableName="professionista"/>
 

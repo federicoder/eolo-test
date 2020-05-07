@@ -45,23 +45,23 @@ public class Invito implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Collaboratore idUtente;
+    private Collaboratore collaboratore;
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Cliente idUtente;
+    private Cliente cliente;
 
     @OneToMany(mappedBy = "invito")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Collaboratore> idInvitos = new HashSet<>();
+    private Set<Collaboratore> collaboratores = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties("idPraticas")
+    @JsonIgnoreProperties("invitos")
     private Pratica pratica;
 
     @ManyToOne
-    @JsonIgnoreProperties("idProfessionistas")
-    private Professionista idUtente;
+    @JsonIgnoreProperties("invitos")
+    private Professionista professionista;
 
     @ManyToMany(mappedBy = "idCollaboratores")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -134,55 +134,55 @@ public class Invito implements Serializable {
         this.idInvito = idInvito;
     }
 
-    public Collaboratore getIdUtente() {
-        return idUtente;
+    public Collaboratore getCollaboratore() {
+        return collaboratore;
     }
 
-    public Invito idUtente(Collaboratore collaboratore) {
-        this.idUtente = collaboratore;
+    public Invito collaboratore(Collaboratore collaboratore) {
+        this.collaboratore = collaboratore;
         return this;
     }
 
-    public void setIdUtente(Collaboratore collaboratore) {
-        this.idUtente = collaboratore;
+    public void setCollaboratore(Collaboratore collaboratore) {
+        this.collaboratore = collaboratore;
     }
 
-    public Cliente getIdUtente() {
-        return idUtente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public Invito idUtente(Cliente cliente) {
-        this.idUtente = cliente;
+    public Invito cliente(Cliente cliente) {
+        this.cliente = cliente;
         return this;
     }
 
-    public void setIdUtente(Cliente cliente) {
-        this.idUtente = cliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public Set<Collaboratore> getIdInvitos() {
-        return idInvitos;
+    public Set<Collaboratore> getCollaboratores() {
+        return collaboratores;
     }
 
-    public Invito idInvitos(Set<Collaboratore> collaboratores) {
-        this.idInvitos = collaboratores;
+    public Invito collaboratores(Set<Collaboratore> collaboratores) {
+        this.collaboratores = collaboratores;
         return this;
     }
 
-    public Invito addIdInvito(Collaboratore collaboratore) {
-        this.idInvitos.add(collaboratore);
+    public Invito addCollaboratore(Collaboratore collaboratore) {
+        this.collaboratores.add(collaboratore);
         collaboratore.setInvito(this);
         return this;
     }
 
-    public Invito removeIdInvito(Collaboratore collaboratore) {
-        this.idInvitos.remove(collaboratore);
+    public Invito removeCollaboratore(Collaboratore collaboratore) {
+        this.collaboratores.remove(collaboratore);
         collaboratore.setInvito(null);
         return this;
     }
 
-    public void setIdInvitos(Set<Collaboratore> collaboratores) {
-        this.idInvitos = collaboratores;
+    public void setCollaboratores(Set<Collaboratore> collaboratores) {
+        this.collaboratores = collaboratores;
     }
 
     public Pratica getPratica() {
@@ -198,17 +198,17 @@ public class Invito implements Serializable {
         this.pratica = pratica;
     }
 
-    public Professionista getIdUtente() {
-        return idUtente;
+    public Professionista getProfessionista() {
+        return professionista;
     }
 
-    public Invito idUtente(Professionista professionista) {
-        this.idUtente = professionista;
+    public Invito professionista(Professionista professionista) {
+        this.professionista = professionista;
         return this;
     }
 
-    public void setIdUtente(Professionista professionista) {
-        this.idUtente = professionista;
+    public void setProfessionista(Professionista professionista) {
+        this.professionista = professionista;
     }
 
     public Set<Collaboratore> getIdUtentes() {

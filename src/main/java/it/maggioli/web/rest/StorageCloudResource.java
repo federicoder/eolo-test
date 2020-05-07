@@ -84,10 +84,19 @@ public class StorageCloudResource {
     /**
      * {@code GET  /storage-clouds} : get all the storageClouds.
      *
+     * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of storageClouds in body.
      */
     @GetMapping("/storage-clouds")
-    public List<StorageCloudDTO> getAllStorageClouds() {
+    public List<StorageCloudDTO> getAllStorageClouds(@RequestParam(required = false) String filter) {
+        if ("licenza-is-null".equals(filter)) {
+            log.debug("REST request to get all StorageClouds where licenza is null");
+            return storageCloudService.findAllWhereLicenzaIsNull();
+        }
+        if ("professionista-is-null".equals(filter)) {
+            log.debug("REST request to get all StorageClouds where professionista is null");
+            return storageCloudService.findAllWhereProfessionistaIsNull();
+        }
         log.debug("REST request to get all StorageClouds");
         return storageCloudService.findAll();
     }
